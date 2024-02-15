@@ -9,21 +9,33 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
           </li>
+          @guest
+              
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Registrati</a>
+            <a class="nav-link" href="{{route('register')}}">Registrati</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Accedi</a>
+            <a class="nav-link" href="{{route('login')}}">Accedi</a>
+          </li>
+          @else
+          <li class="nav-item">
+            <a class="nav-link" href="#">Benvenuto {{Auth::user()->name}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Inserisci Annuncio</a>
           </li>
+          <form action="{{route('logout')}}" method="post">
+           @csrf
+           <button type="submit" class="btn btn-danger">Logout</button> 
+        </form>
+
           {{-- <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li> --}}
+          @endguest
         </ul>
       </div>
     </div>

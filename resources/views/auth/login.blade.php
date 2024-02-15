@@ -5,7 +5,7 @@
                 <h1 class="text-center display-1">Accedi</h1>
             </div>
             <div class="col-12 col-md-6">
-                <form method="POST" action="{{route('register')}}">
+                <form method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Indirizzo mail</label>

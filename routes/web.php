@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use App\Http\Controllers\PublicController;
 
 // Rotta per home 
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
+
+// Rotta per creazione annuncio 
+Route::get('/create-announcement', [AnnouncementController::class, 'createAnnouncement'])->name('create_announcement');

@@ -25,7 +25,7 @@
             <a class="nav-link" href="#">Benvenuto {{Auth::user()->name}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Inserisci Annuncio</a>
+            <a class="nav-link" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
           </li>
           <form action="{{route('logout')}}" method="post">
            @csrf

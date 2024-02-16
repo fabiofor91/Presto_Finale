@@ -1,0 +1,36 @@
+
+:root{  
+    --colore_primario: #1d1d1b ;
+    --colore_secondario: #ffed00 ;  
+    --colore_terziario: #ffffff; 
+} 
+*{
+    font-family: "Habibi", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.font-title {
+    font-family: "Capriola", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.nav-custom{
+
+    background-color: var(--colore_secondario) !important;
+}
+.logo{
+    height: 40px;
+}
+.nav-top{
+    margin-top: 65px;
+}
+.regist{
+    margin-top: 65px;
+}
+
+.btn{
+    background-color: var(--colore_secondario) !important;
+    color: var(--colore_primario) !important;
+    border: #1d1d1b;
+}

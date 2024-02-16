@@ -17,7 +17,7 @@
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label ">Indirizzo mail</label>
                       <input type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="mario@rossi.it" name="email">
-                      @error('email')
+                        @error('email')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>

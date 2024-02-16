@@ -24,15 +24,15 @@
                 <div class="alert alert-danger mt-2">{{ $message }}</div>
             @enderror
           </div>
-          {{-- <div class="form">
-            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+          <div class="form mb-3">
+            <label for="floatingSelect">Scegli la categoria</label>
+            <select wire:model.defer="category" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Open this select menu</option>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
             </select>
-            <label for="floatingSelect">Works with selects</label>
-          </div> --}}
+          </div>
         <button type="submit" class="btn btn-primary">Crea Annuncio</button>
       </form>
 </div>

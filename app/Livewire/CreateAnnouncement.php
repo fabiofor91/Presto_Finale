@@ -4,19 +4,21 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Announcement;
-
+use App\Models\Category;
 
 class CreateAnnouncement extends Component
 {
     public $title;
     public $description;
     public $price;
+    public $category;
 
     // Regole di validazione annuncio
     protected $rules = [
         'title' => 'required|min:4',
         'description' => 'required|min:8',
-        'price' => 'required|numeric'
+        'price' => 'required|numeric',
+        'category' => 'required'
     ];
 
     // Messaggi di validazione 
@@ -27,15 +29,24 @@ class CreateAnnouncement extends Component
         'price.numeric' => 'Inserisci solo un numero'
     ];
 
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
+    // public function updated($propertyName)
+    // {
+    //     $this->validateOnly($propertyName);
+    // }
 
     // funzione per creazione annuncio 
     public function store(){
-        $validatedData = $this->validate();
-        Announcement::create($validatedData);
+        // $validatedData = $this->validate();
+        $this->validate();
+        $category = Category::find($this->category);
+        $category->announcements()->create(
+            [
+            'title'=>$this->title,
+            'description'=>$this->description,
+            'price'=>$this->price
+        ]
+    );
+        // Announcement::create($validatedData);
         //     [
         //     'title'=>$this->title,
         //     'description'=>$this->description,
@@ -50,7 +61,8 @@ class CreateAnnouncement extends Component
     public function clearForm(){
         ['title'=>$this->title = '',
         'description'=>$this->description = '',
-        'price'=>$this->price = ''
+        'price'=>$this->price = '',
+        'category'=>$this->category = ''
     ];
     }
 

@@ -42,7 +42,7 @@ class CreateAnnouncement extends Component
         //     'price'=>$this->price
         // ]);
         $this->clearForm();
-        return redirect(route('welcome'))->with('status', 'Annuncio inserito!');
+        return redirect(route('create_announcement'))->with('status', 'Annuncio inserito!');
     }
     
    

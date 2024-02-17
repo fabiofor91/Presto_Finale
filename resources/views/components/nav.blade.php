@@ -5,16 +5,12 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a class="nav-link active mx-5" aria-current="page" href="{{route('welcome')}}">Home</a>
           </li>
-          @guest
-              
-          {{-- <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li> --}}
+          @guest       
           <li class="nav-item">
             <a class="nav-link mx-5" href="{{route('register')}}">Registrati</a>
           </li>
@@ -32,10 +28,6 @@
            @csrf
            <button type="submit" class="btn btn-danger">Logout</button> 
         </form>
-
-          {{-- <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li> --}}
           @endguest
         </ul>
       </div>

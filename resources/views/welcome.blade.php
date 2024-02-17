@@ -1,5 +1,4 @@
 <x-layout>
-<<<<<<< HEAD
     <div class="container nav-top">
         <div class="row justify-content-star">
             <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
@@ -10,13 +9,6 @@
                         {{ session('status') }}
                     </div>
                 @endif
-=======
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <h1 class="text-center display-1">Presto.it ItaliaUnita</h1>
-                
->>>>>>> e41e1734a47342f235eb3cb561ff69a6c0b7f281
             </div>
             <div class="col-12 col-md-7 d-flex align-items-center justify-content-center">
                 <div id="carouselExampleDark" class="carousel carousel-dark slide">

@@ -3,8 +3,9 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Announcement;
 use App\Models\Category;
+use App\Models\Announcement;
+use Illuminate\Support\Facades\Auth;
 
 class CreateAnnouncement extends Component
 {
@@ -38,14 +39,18 @@ class CreateAnnouncement extends Component
     public function store(){
         // $validatedData = $this->validate();
         $this->validate();
+        // cerca la categoria 
         $category = Category::find($this->category);
-        $category->announcements()->create(
+        // crea l'annuncio appartenente alla categoria appena trovata con la funzione di relazione
+        $announcement = $category->announcements()->create(
             [
             'title'=>$this->title,
             'description'=>$this->description,
             'price'=>$this->price
         ]
-    );
+        );
+        // assegniamo lo user_id all'annuncio appena creato con la funzione di relazione 
+        Auth::user()->announcements()->save($announcement);
         // Announcement::create($validatedData);
         //     [
         //     'title'=>$this->title,

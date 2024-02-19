@@ -26,12 +26,30 @@
     border-radius: 5px;
 }
 
+img{
+    border-radius: 7%;
+}
+.imgcard{
+    height: 200px;
+}
+
+.dropdown-menu
+{
+    background-color: var(--colore_secondario) !important;
+    opacity: 0.9;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: var(--colore_primario) !important;
+    color: var(--colore_secondario) !important; 
+    border-radius: 5px;
+}
+
 .logo{
     height: 40px;
 }
 
 .nav-top{
-    margin-top: 65px;
+    margin-top: 100px;
 }
 
 /* bordo sezione accedi,registrati,inserisci il tuo annuncio */
@@ -43,6 +61,17 @@
     width: 100%; 
     max-width: 900px; 
     height: auto;
+}
+
+.categori{
+    margin-top: 70px;
+    width: 700px;
+}
+
+.border {
+        border: 2px solid #000;
+        border-radius: 20px;
+        padding: 10px
 }
 
 .btn{
@@ -61,6 +90,8 @@
     margin-top: 80px;
     background-color: var(--colore_secondario) !important;
 }
+
+
 
 /* mediaquery tablet */
 @media only screen and (max-width: 768px) {

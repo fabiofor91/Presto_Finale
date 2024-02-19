@@ -45,6 +45,11 @@
     border: #1d1d1b;
 }
 
+.btn2{
+    background-color: var(--colore_primario) !important;
+    color: var(--colore_secondario) !important;
+}
+
 /* mediaquery tablet */
 @media only screen and (max-width: 768px) {
     .registlogin, .registlogin2, .registlogin3 {

@@ -65,7 +65,7 @@
             <h5 class="card-title">Prezzo: {{$announcement->price}} €</h5>
             <p class="card-text">{{$announcement->description}}</p>
             <a href="#" class="btn btn-primary my-1">Vai al dettaglio</a>
-            <a href="#" class="btn btn-primary my-1">Vai alla categora {{$announcement->category->name}}</a>
+            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1">Vai alla categora {{$announcement->category->name}}</a>
             <p class="card-footer">Annuncio creato il {{$announcement->created_at->format('d/m/Y')}}</p>
           </div>
         </div>

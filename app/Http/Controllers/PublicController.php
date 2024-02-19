@@ -10,7 +10,8 @@ class PublicController extends Controller
 {
     // pagina home 
     public function welcome(){
-        $announcements = Announcement::take(6)->get()->sortByDesc('created_at');
+        $announcements = Announcement::take(6)->orderBy('created_at', 'desc')
+        ->get();
         return view('welcome', compact('announcements'));
     }
 

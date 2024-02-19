@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     <title>Presto.it ItaliaUnita</title>
-    <link rel="icon" type="image/png" href="./media/img/favicon_Presto.png">
+    <link rel="icon" type="image/png" href="/media/img/favicon_Presto.png">
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Habibi&display=swap" rel="stylesheet">

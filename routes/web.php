@@ -25,4 +25,7 @@ Route::get('/create-announcement', [AnnouncementController::class, 'createAnnoun
 Route::get('/categorie/{category}', [PublicController::class, 'showCategory'])->name('showCategory');
 
 // Rotta per dettaglio annuncio 
-// Route::get('/')
+Route::get('/annuncio/{announcement}', [AnnouncementController::class, 'showDetail'])->name('announcement_detail');
+
+// rotta per index annunci 
+Route::get('/index-announcements', [AnnouncementController::class, 'indexAnnouncements'])->name('indexAnnouncements');

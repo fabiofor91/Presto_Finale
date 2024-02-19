@@ -1,6 +1,6 @@
 <x-layout>
   <div class="container nav-top">
-    <div class="row justify-content-start">
+    <div class="row justify-content-around">
       <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
         <h1 class="text-center display-1 my-5">Presto.it ItaliaUnita</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
@@ -10,7 +10,7 @@
         </div>
         @endif
       </div>
-      <div class="col-12 col-md-7 d-flex align-items-center justify-content-center">
+      <div class="col-12 col-md-5 ">
         <div id="carouselExampleCaptions" class="carousel slide">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -19,21 +19,21 @@
           </div>
           <div class="carousel-inner m-1">
             <div class="carousel-item active">
-              <img src="https://picsum.photos/201" class="d-block w-100" alt="...">
+              <img src="https://picsum.photos/401" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/201" class="d-block w-100" alt="...">
+              <img src="https://picsum.photos/301" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/201" class="d-block w-100" alt="...">
+              <img src="https://picsum.photos/301" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>

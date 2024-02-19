@@ -13,7 +13,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorie
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu ">
               @foreach ($categories as $category)
                   
               <li><a class="dropdown-item" href="{{route('showCategory', compact('category'))}}">{{$category->name}}</a></li>
@@ -36,6 +36,3 @@
       </div>
     </div>
   </nav>
-
-
-  {{-- <div height= "1000px "class="vh-100"></div> --}}

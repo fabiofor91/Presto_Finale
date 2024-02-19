@@ -12,7 +12,7 @@
         </div>
         <div class="form">
             <label for="floatingTextarea2">Descrizione</label>
-            <textarea class="form-control @error('descrription') is-invalid @enderror" placeholder="Inserisci la descrizione" id="floatingTextarea2" style="height: 100px" wire:model="description"></textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Inserisci la descrizione" id="floatingTextarea2" style="height: 100px" wire:model="description"></textarea>
             @error('description')
                 <div class="alert alert-danger mt-2">{{ $message }}</div>
             @enderror

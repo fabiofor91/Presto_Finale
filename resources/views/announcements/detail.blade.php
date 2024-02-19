@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container nav-top">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card" style="width: 18rem;">
                     <img src="https://picsum.photos/200/250" class="card-img-top" alt="immagine">
@@ -15,5 +15,13 @@
                   </div>
             </div>
         </div>
+        <div class="row justify-content-center my-4 bg-success-subtle rounded-5">
+            <h3 class="text-center my-2 text-info">immagini del prodotto</h3>
+            <div class="col-12 col-md-10  min-wv-100">
+                <x-carosello/>
+            </div>
+        </div>
     </div>
+    
+   
 </x-layout>

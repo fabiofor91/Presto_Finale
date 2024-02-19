@@ -8,11 +8,15 @@
                     <div class="card-body">
                         <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
                         <h5 class="card-title">Prezzo: {{$announcement->price}} €</h5>
+                        <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary"> Vai al dettaglio</a>
                         <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary">Vai alla categoria {{$announcement->category->name}}</a>
                     </div>
                 </div>
             </div>
             @endforeach
+            {{$announcements->links()}}
         </div>
     </div>
+
+   
 </x-layout>

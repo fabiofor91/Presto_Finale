@@ -5,7 +5,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav d-flex mx-auto">
           <a class="nav-link active mx-5" aria-current="page" href="{{route('welcome')}}">Home</a>
           {{-- <a class="nav-link" href="#">Features</a> --}}

@@ -24,6 +24,3 @@
       </div>
     </div>
   </nav>
-
-
-  {{-- <div height= "1000px "class="vh-100"></div> --}}

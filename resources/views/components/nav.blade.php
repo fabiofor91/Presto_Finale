@@ -20,6 +20,7 @@
               @endforeach
             </ul>
           </li>
+          <a class="nav-link mx-5" href="{{route('indexAnnouncements')}}">Annunci</a>
           @guest
           <a class="nav-link mx-5" href="{{route('register')}}">Registrati</a>
           <a class="nav-link mx-5" href="{{route('login')}}">Accedi</a>

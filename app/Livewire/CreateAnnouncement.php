@@ -30,15 +30,12 @@ class CreateAnnouncement extends Component
         'price.numeric' => 'Inserisci solo un numero'
     ];
 
-    // public function updated($propertyName)
-    // {
-    //     $this->validateOnly($propertyName);
-    // }
+    
 
     // funzione per creazione annuncio 
     public function store(){
         // $validatedData = $this->validate();
-        $this->validate();
+        // $this->validate();
         // cerca la categoria 
         $category = Category::find($this->category);
         // crea l'annuncio appartenente alla categoria appena trovata con la funzione di relazione
@@ -59,6 +56,11 @@ class CreateAnnouncement extends Component
         // ]);
         $this->clearForm();
         return redirect(route('create_announcement'))->with('status', 'Annuncio inserito!');
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
     }
     
    

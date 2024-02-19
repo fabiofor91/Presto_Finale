@@ -20,3 +20,9 @@ Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
 
 // Rotta per creazione annuncio 
 Route::get('/create-announcement', [AnnouncementController::class, 'createAnnouncement'])->name('create_announcement');
+
+// Rotta per annunci per categoria 
+Route::get('/categorie/{category}', [PublicController::class, 'showCategory'])->name('showCategory');
+
+// Rotta per dettaglio annuncio 
+// Route::get('/')

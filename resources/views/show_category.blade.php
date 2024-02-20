@@ -7,13 +7,14 @@
             @forelse ($category->announcements as $announcement)
             <div class="col-12 col-md-6 col-lg-4 my-1 d-flex justify-content-center">
                 <div class="card p-2" style="width: 18rem;">
-                    <img src="https://picsum.photos/200/25{{$announcement->id}}" class="card-img-top imgcard" alt="immagine">
+                    <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top imgcard" alt="immagine">
                     <div class="card-body p-0 mt-3">
-                        <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
-                        <h5 class="card-title">Prezzo: {{$announcement->price}} €</h5>
-                        <p class="card-text">{{$announcement->description}}</p>
-                        <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1">Vai al dettaglio</a>
-                        <p class="card-footer m-0">Annuncio creato il {{$announcement->created_at->format('d/m/Y')}}</p>
+                        <h5 class="card-title fw-bold text-center">{{$announcement->title}}</h5>
+                        <h5 class="card-title text-center">{{$announcement->price}} €</h5>
+                        <div class="text-center">
+
+                            <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1 mx-auto p-3">Vai al dettaglio</a>
+                        </div>
                     </div>
                 </div>
             </div>

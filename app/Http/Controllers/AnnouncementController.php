@@ -26,7 +26,7 @@ class AnnouncementController extends Controller
     // vista per index annunci 
     public function indexAnnouncements(){
         // $announcements = DB::table('announcements')->orderBy('created_at', 'desc')->get();
-        $announcements = Announcement::orderBy('created_at', 'desc')->paginate(5);
+        $announcements = Announcement::orderBy('created_at', 'desc')->paginate(6);
         return view('announcements.index', compact('announcements'));
     }
 }

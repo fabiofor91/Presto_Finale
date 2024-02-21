@@ -20,6 +20,11 @@ public function index()
     return  view('revisor.index', compact('announcement_to_check'));
 }
 
+// funzione per pagina di form per diventare revisori 
+public function formRevisor(){
+    return view('revisor.form_revisor');
+}
+
  public function acceptAnnouncement(Announcement $announcement)
  {
     $announcement->setAccepted(true);
@@ -32,17 +37,23 @@ public function rejectAnnouncement(Announcement $announcement)
     return redirect()->back()->with('message', 'L\'annuncio non ha passato la tua revisione ' );
 }
 
-public function becomeRevisor()
+public function becomeRevisor(Request $request)
 {
     // $user=Auth::user()->name;
-    
-    Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+    // dd($request);
+    $richiesta = [
+        'user'=> Auth::user(),
+        'description' => $request->description
+    ];
+    // dd($richiesta);
+    Mail::to('admin@presto.it')->send(new BecomeRevisor($richiesta));
         return redirect()->back()->with('message', 'Complimenti! Hai richiesto di diventare revisore correttamente');
 }
 
 public function makeRevisor(User $user)
 {
     Artisan::call('presto:makeUserRevisor', ["email"=>$user->email]);
+    dd('email');
     return redirect('/')->with('message', 'hai reso un utente  nuovo revisore');
 }
 }

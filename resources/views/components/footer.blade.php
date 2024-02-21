@@ -13,6 +13,12 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Work in pr</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Lavora con noi</a></li>
       </ul>
+      </div>
+      <div class="m-2 text-muted text-center">
+        <h4>Seguici su</h4>
+        <a href=""><i class="display-5 bi bi-facebook"></i></a>
+        <a href=""><i class="display-5 bi bi-instagram"></i</a>
+        <a href=""><i class="bi bi-whatsapp"></i></a>
     </footer>
    </div>
 </div>

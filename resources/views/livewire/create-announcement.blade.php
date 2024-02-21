@@ -26,7 +26,7 @@
           </div>
           <div class="form mb-3">
             <label for="floatingSelect">Scegli la categoria</label>
-            <select wire:model.defer="category" class="form-select @error('category') is-invalid @enderror" id="floatingSelect" aria-label="Floating label select example">
+            <select wire:model.defer.live="category" class="form-select @error('category') is-invalid @enderror" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Categorie</option>
                 @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>

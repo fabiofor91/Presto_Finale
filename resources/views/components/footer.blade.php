@@ -12,5 +12,11 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Work in pr</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">work in pr</a></li>
       </ul>
+<form action="{{route('become.revisor')}}" method="POST">
+  @csrf
+<button type="submit">Lavora con noi</button>
+</form>
+    
+
     </footer>
   </div>

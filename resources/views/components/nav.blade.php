@@ -28,7 +28,8 @@
           <a class="nav-link mx-5" href="#">Benvenuto {{Auth::user()->name}}</a>
           <a class="nav-link mx-5" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
 
-          {{-- controllo utente revisore e relativa rotta per la  pagina di revisione --}}
+          {{--! controllo utente revisore e relativa rotta per la  pagina di revisione  da sistemare la parte gra-FICA --}}
+
           @if (Auth::user()->is_revisor)
                 <li  class="nav-item">
                   <a class="" href="{{route('revisor.index')}}" >Zona revisore</a>
@@ -45,10 +46,5 @@
         </div>
       </div>
     </div>
-
-   
-
-
-
 
   </nav>

@@ -39,3 +39,6 @@ Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('is
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
 // rotta per  il rifiuto dell'annuncio
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
+
+// rotta per ricerca annuncio 
+Route::get('/ricerca/annuncio', [PublicController::class, 'searchAnnouncement'])->name('search_announcement');

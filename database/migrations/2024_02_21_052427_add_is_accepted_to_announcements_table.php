@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //creazione variabile booleana indicante lo stato "revisor"
-            $table -> boolean('is_revisor')->default(false);
+        Schema::table('announcements', function (Blueprint $table) {
+            //
+            $table->boolean('is_accepted')->nullable();
         });
     }
 
@@ -22,10 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //eliminazione colonna "is revisor"
-            $table->dropColumn('is_revisor');
-
+        Schema::table('announcements', function (Blueprint $table) {
+            //
+            $table->dropColumn('is_accepted');
         });
     }
 };

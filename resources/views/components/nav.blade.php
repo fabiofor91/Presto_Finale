@@ -26,10 +26,11 @@
           <a class="nav-link mx-2" href="{{route('register')}}">Registrati</a>
           <a class="nav-link mx-2" href="{{route('login')}}">Accedi</a>
           @else
-          <a class="nav-link mx-2" href="#">Benvenuto {{Auth::user()->name}}</a>
-          <a class="nav-link mx-2" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
-          
-          {{-- controllo utente revisore e relativa rotta per la  pagina di revisione --}}
+          <a class="nav-link mx-5" href="#">Benvenuto {{Auth::user()->name}}</a>
+          <a class="nav-link mx-5" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
+
+          {{--! controllo utente revisore e relativa rotta per la  pagina di revisione  da sistemare la parte gra-FICA --}}
+
           @if (Auth::user()->is_revisor)
           <li  class="nav-item">
             <a class="" href="{{route('revisor.index')}}" >Zona revisore</a>
@@ -46,19 +47,11 @@
           {{-- barra di ricerca  --}}
           
         </div>
-      </div>
-      <div class="mr-2">
-            
-        <form class="d-flex" role="search" method="get" action="{{route('search_announcement')}}">
-          <input class="form-control me-2" type="search" aria-label="Search" name="searched">
-          <button class="btn btn-outline-success bottone" type="submit">Cerca</button>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </div>
-    
-    
-    
-    
-    
-    
+
   </nav>

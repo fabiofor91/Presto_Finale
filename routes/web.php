@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\RevisorController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,8 @@ Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rej
 
 // rotta per ricerca annuncio 
 Route::get('/ricerca/annuncio', [PublicController::class, 'searchAnnouncement'])->name('search_announcement');
+// * richiesta all'amministratore di diventare revisore
+Route::post('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+
+// * rendi utente revisore
+Route::get('/rendi/revisore/user', [RevisorController::class, 'makeRevisor'])->name('make.revisor');

@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div> --}}
-        <div class="row justify-content-center my-4  rounded-5">
+        {{-- <div class="row justify-content-center my-4  rounded-5">
             <h3 class="text-center my-2">Dettaglio dell'annuncio</h3>
             <div class="col-12 col-md-10  min-wv-100">
                 <div class="it-carousel-wrapper it-carousel-landscape-abstract splide" data-bs-carousel-splide data-bs-ride="carousel">
@@ -103,8 +103,30 @@
                     </div>
                 </div>
             </div>
+        </div> --}}
+        <div class="row">
+            <div class="col-12 col-md-6">
+
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+                    <div class="parallax-bg" data-swiper-parallax="-23%"></div>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img class="" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
         </div>
     </div>
-    
-    
+</div>  
+
 </x-layout>

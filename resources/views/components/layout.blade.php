@@ -27,6 +27,19 @@
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.2/dist/js/bootstrap-italia.bundle.min.js"></script> --}}
     {{-- link swiper  --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          speed: 600,
+          parallax: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
 </body>
 </html>

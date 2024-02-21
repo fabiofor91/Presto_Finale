@@ -43,6 +43,7 @@ Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rej
 
 // rotta per ricerca annuncio 
 Route::get('/ricerca/annuncio', [PublicController::class, 'searchAnnouncement'])->name('search_announcement');
+
 // * richiesta all'amministratore di diventare revisore
 Route::post('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 

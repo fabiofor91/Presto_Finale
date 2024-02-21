@@ -4,7 +4,7 @@
             <div class="col-12">
                 <h1 class="text-center display-1">Tutti gli annunci</h1>
             </div>
-            @foreach ($announcements as $announcement)
+            @forelse ($announcements as $announcement)
             <div class="col-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center ">
                 <div class="card border img" style="width: 18rem;">
                     <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top imgcard" alt="immagine">
@@ -17,9 +17,16 @@
                         </div>
                     </div>
                 </div>
+            </div>    
+            @empty
+            <div class="col-12 col-md-8">
+                <div class="alert alert-danger">
+                    <p class="text-center">Non ci sono annunci relativi a questa ricerca. Effettua una nuova ricerca</p>
+                    <a href="{{route('indexAnnouncements')}}" class="btn">Torna all'indice degli annunci</a>
+                </div>
             </div>
-            @endforeach
-            
+                
+            @endforelse
         </div>
         <div class="row justify-content-center">
             <div class="col-6 col-md-3 d-flex justify-content-center my-3">

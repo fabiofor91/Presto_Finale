@@ -1,7 +1,13 @@
 <x-layout>
+  
   <div class="container nav-top">
     <div class="row justify-content-around">
       <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
+        @if (session('access.denied'))
+        <div class="d-flex justify-content-center alert alert-danger"> <br>
+          {{session('access.denied')}}
+        </div>
+    @endif
         <h1 class="text-center display-1 my-5">Presto.it ItaliaUnita</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
         @if (session('status'))
@@ -9,8 +15,8 @@
           {{ session('status') }}
         </div>
         @endif
-
         
+
       </div>
       <div class="col-12 col-md-5 ">
         <div id="carouselExampleCaptions" class="carousel slide">

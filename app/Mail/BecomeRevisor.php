@@ -15,14 +15,14 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class BecomeRevisor extends Mailable
 {
     use Queueable, SerializesModels;
-    public $user;
+    public $richiesta;
     /**
      * Create a new message instance.
      */
-    public function __construct(User $user)
+    public function __construct($richiesta)
     {
         //
-        $this->user=$user;
+        $this->richiesta=$richiesta;
        
     }
 
@@ -47,7 +47,7 @@ class BecomeRevisor extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mailTo.revisorToBe',
+            view: 'mailTo.revisorToBe'
         );
     }
 

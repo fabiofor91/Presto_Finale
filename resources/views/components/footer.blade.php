@@ -11,14 +11,8 @@
         <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link px-2 text-muted">Home</a></li>
         <li class="nav-item"><a href="{{route('indexAnnouncements')}}" class="nav-link px-2 text-muted">Annunci</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Work in pr</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Lavora con noi</a></li>
+        <li class="nav-item"><a href="{{route('form_revisor')}}" class="nav-link px-2 text-muted">Lavora con noi</a></li>
       </ul>
-<form action="{{route('become.revisor')}}" method="POST">
-  @csrf
-<button type="submit">Lavora con noi</button>
-</form>
-    
-
     </footer>
    </div>
 </div>

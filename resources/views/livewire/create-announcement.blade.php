@@ -19,7 +19,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Prezzo</label>
-            <input type="numeric" class="form-control @error('price') is-invalid @enderror" id="exampleInputEmail1" placeholder="Inserisci il prezzo" wire:model.live="price">
+            <input type="numeric" class="form-control @error('price') is-invalid @enderror" id="numeric" placeholder="Inserisci il prezzo" wire:model.live="price">
             @error('price')
                 <div class="alert alert-danger mt-2">{{ $message }}</div>
             @enderror

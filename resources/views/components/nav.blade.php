@@ -27,6 +27,16 @@
           @else
           <a class="nav-link mx-5" href="#">Benvenuto {{Auth::user()->name}}</a>
           <a class="nav-link mx-5" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
+
+          {{-- controllo utente revisore e relativa rotta per la  pagina di revisione --}}
+          @if (Auth::user()->is_revisor)
+                <li  class="nav-item">
+                  <a class="" href="{{route('revisor.index')}}" >Zona revisore</a>
+                  <span>{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+                  
+                  </li>
+          @endif
+           {{-- fine  --}}
           <form action="{{route('logout')}}" method="post">
             @csrf
             <button type="submit" class="btn btn-danger">Logout</button> 
@@ -35,4 +45,10 @@
         </div>
       </div>
     </div>
+
+   
+
+
+
+
   </nav>

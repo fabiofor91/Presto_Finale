@@ -19,14 +19,14 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Prezzo</label>
-            <input type="numeric" class="form-control @error('price') is-invalid @enderror" id="exampleInputEmail1" placeholder="Inserisci il prezzo" wire:model.live="price">
+            <input type="numeric" class="form-control @error('price') is-invalid @enderror" id="numeric" placeholder="Inserisci il prezzo" wire:model.live="price">
             @error('price')
                 <div class="alert alert-danger mt-2">{{ $message }}</div>
             @enderror
           </div>
           <div class="form mb-3">
             <label for="floatingSelect">Scegli la categoria</label>
-            <select wire:model.defer="category" class="form-select @error('category') is-invalid @enderror" id="floatingSelect" aria-label="Floating label select example">
+            <select wire:model.defer.live="category" class="form-select @error('category') is-invalid @enderror" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Categorie</option>
                 @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>

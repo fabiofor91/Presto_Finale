@@ -9,6 +9,8 @@
           {{ session('status') }}
         </div>
         @endif
+
+        
       </div>
       <div class="col-12 col-md-5 ">
         <div id="carouselExampleCaptions" class="carousel slide">

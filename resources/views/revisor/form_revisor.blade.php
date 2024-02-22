@@ -1,29 +1,19 @@
 <x-layout>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 nav-top">
-                @if (session('message'))
-                <div class="alert alert-success">
-                {{ session('message') }}
-                </div>
-                @endif
-                <h1 class="text-center display-2">Lavora con Noi!</h1>
-                <h2 class="text-center display-5">Diventa Revisore degli annunci</h2>
-            </div>
-            <div class="col-12 col-md-6 d-flex flex-column align-items-center">
-                <h4 class="text-center">Ciao {{Auth::user()->name}}, grazie per il tuo interessamento!</h4>
-                <h5>Parlaci di te, ti daremo presto una risposta!</h5>
-            </div>
-            <form action="{{route('become.revisor')}}" method="post">
-                <div class="form-floating m-3">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description"></textarea>
-                    <div class="my-2 d-flex justify-content-end">
-                        
-                        @csrf
-                        <button type="submit" class="btn btn-primary" >Invia Richiesta</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    <div class="container-fluid">
+        <div class="col-12">
+          <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-12 col-lg-4 mb-3 mb-lg-0 text-center text-md-start text-lg-start text-muted">&copy; 2024 Aulab: Fabio Forgiarini . Francesco Giusto . Michele Di Martino . Armando Campanella .</p>
+        
+            <a href="/" class="col-md-12 col-lg-4 d-flex align-items-center justify-content-center mb-3 mb-lg-0 link-dark text-decoration-none">
+              <img src="/media/img/logoPresto.png" class="logo" alt="logo">
+            </a>        
+            <ul class="nav col-md-12 col-lg-4 justify-content-center justify-content-md-end justify-content-lg-end">
+              <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link px-2 text-muted">Home</a></li>
+              <li class="nav-item"><a href="{{route('indexAnnouncements')}}" class="nav-link px-2 text-muted">Annunci</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">In lavorazione</a></li>
+              <li class="nav-item"><a href="{{route('form_revisor')}}" class="nav-link px-2 text-muted">Lavora con noi</a></li>
+            </ul>
+          </footer>
+         </div>
+      </div>
 </x-layout>

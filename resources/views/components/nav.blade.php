@@ -8,10 +8,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav d-flex mx-auto">
-          <a class="nav-link active mx-5" aria-current="page" href="{{route('welcome')}}">Home</a>
+          <a class="nav-link active mx-5" aria-current="true" href="{{route('welcome')}}">Home</a>
           {{-- Dropdown categorie  --}}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" aria-current="true" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorie
             </a>
             <ul class="dropdown-menu ">
@@ -21,35 +21,38 @@
               @endforeach
             </ul>
           </li>
-          <a class="nav-link mx-2" href="{{route('indexAnnouncements')}}">Annunci</a>
+          <a class="nav-link mx-2" aria-current="true" href="{{route('indexAnnouncements')}}">Annunci</a>
           @guest
-          <a class="nav-link mx-2" href="{{route('register')}}">Registrati</a>
-          <a class="nav-link mx-2" href="{{route('login')}}">Accedi</a>
+          <a class="nav-link mx-2" aria-current="true" href="{{route('register')}}">Registrati</a>
+          <a class="nav-link mx-2" aria-current="true" href="{{route('login')}}">Accedi</a>
           @else
           <a class="nav-link mx-2" href="#">Benvenuto {{Auth::user()->name}}</a>
-          <a class="nav-link mx-2" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
+          <a class="nav-link mx-2" aria-current="true" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
 
           {{--! controllo utente revisore e relativa rotta per la  pagina di revisione  da sistemare la parte gra-FICA --}}
 
           @if (Auth::user()->is_revisor)
-          <li  class="nav-item">
-            <a class="" href="{{route('revisor.index')}}" >Zona revisore</a>
-            <span>{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+          <div class="position-relative">
+            <a class="nav-link active mx-2 btn-revisor bottone" aria-current="true" href="{{route('revisor.index')}}" >Zona revisore</a>
+            <div class=" d-flex justify-content-center align-items-center position-absolute top-0 end-0 counter">
+              <span class="">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            </div>
+          </div>
             
-          </li>
+          
           @endif
           {{-- fine  --}}
           <form action="{{route('logout')}}" method="post">
             @csrf
-            <button type="submit" class="btn btn-danger">Logout</button> 
+            <button type="submit" class="btn bottone">Logout</button> 
           </form>
           @endguest
           {{-- barra di ricerca  --}}
           
         </div>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success bottone" type="submit">Search</button>
+        <form class="d-flex" role="search" method="GET" action="{{route('search_announcement')}}">
+          <input class="form-control me-2" type="search" aria-label="Search" name="searched">
+          <button class="btn btn-outline-success bottone" type="submit">Cerca</button>
         </form>
       </div>
     </div>

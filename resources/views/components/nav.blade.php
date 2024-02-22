@@ -20,19 +20,23 @@
               @endforeach
             </ul>
           </li>
-          <a class="nav-link mx-5" href="{{route('indexAnnouncements')}}">Annunci</a>
+          <a class="nav-link mx-2" href="{{route('indexAnnouncements')}}">Annunci</a>
           @guest
-          <a class="nav-link mx-5" href="{{route('register')}}">Registrati</a>
-          <a class="nav-link mx-5" href="{{route('login')}}">Accedi</a>
+          <a class="nav-link mx-2" href="{{route('register')}}">Registrati</a>
+          <a class="nav-link mx-2" href="{{route('login')}}">Accedi</a>
           @else
-          <a class="nav-link mx-5" href="#">Benvenuto {{Auth::user()->name}}</a>
-          <a class="nav-link mx-5" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
+          <a class="nav-link mx-2" href="#">Benvenuto {{Auth::user()->name}}</a>
+          <a class="nav-link mx-2" href="{{route('create_announcement')}}">Inserisci Annuncio</a>
           <form action="{{route('logout')}}" method="post">
             @csrf
             <button type="submit" class="btn btn-danger">Logout</button> 
           </form>
           @endguest
         </div>
+        <form class="d-flex mx-5 align-items-center custom-form" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success bottone" type="submit">Search</button>
+      </form>
       </div>
     </div>
   </nav>

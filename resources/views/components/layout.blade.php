@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Habibi&display=swap" rel="stylesheet">
     {{-- link bootstrap italia  --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.2/dist/css/bootstrap-italia.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.2/dist/css/bootstrap-italia.min.css"> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- link swiper  --}}
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>   
@@ -24,7 +24,7 @@
     </div>
     <x-footer/>
     {{-- script bootstrap italia  --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.2/dist/js/bootstrap-italia.bundle.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.8.2/dist/js/bootstrap-italia.bundle.min.js"></script> --}}
     {{-- link swiper  --}}
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>

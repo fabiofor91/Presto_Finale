@@ -26,8 +26,15 @@
     border-radius: 5px;
 }
 
+.bottone:hover {
+    background-color: var(--colore_primario) !important;
+    color: var(--colore_secondario) !important;
+    transition: background-color 0.3s ease;
+}
+
+
 img{
-    border-radius: 7%;
+    border-radius: 2%;
 }
 
 .imgcard{
@@ -87,13 +94,22 @@ img{
     color: var(--colore_secondario) !important;
 }
 
+.btn-dimension{
+    background-color: var(--colore_secondario) !important;
+    color: var(--colore_primario) !important;
+    height: 70px;
+    width: 75%;
+}
+
 /* pagina annunci per categoria */
 .margin-header{
     margin-top: 80px;
     background-color: var(--colore_secondario) !important;
 }
 
-/* mediaquery per tablet */
+/* css carosello */
+
+/* mediaquery tablet */
 @media only screen and (max-width: 768px) {
     .navbar-nav {
         display: flex;
@@ -121,3 +137,4 @@ img{
         margin-right: auto;
     }
 }
+

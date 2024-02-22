@@ -7,7 +7,7 @@
     <title>Richiesta Revisore</title>
 </head>
 <body>
-  <h1>richiesta inviata</h1>
+  <h1>Candidatura per posizione di revisore</h1>
   <ul>
     <li>nome: {{Auth::user()->name}}</li>
     <li>mail: {{Auth::user()->email}}</li>

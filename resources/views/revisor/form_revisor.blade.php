@@ -2,6 +2,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 nav-top">
+                @if (session('message'))
+                <div class="alert alert-success">
+                {{ session('message') }}
+                </div>
+                @endif
                 <h1 class="text-center display-2">Lavora con Noi!</h1>
                 <h2 class="text-center display-5">Diventa Revisore degli annunci</h2>
             </div>

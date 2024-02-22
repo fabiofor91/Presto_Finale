@@ -53,7 +53,7 @@ public function becomeRevisor(Request $request)
 public function makeRevisor(User $user)
 {
     Artisan::call('presto:makeUserRevisor', ["email"=>$user->email]);
-    dd('email');
+    // dd('email');
     return redirect('/')->with('message', 'hai reso un utente  nuovo revisore');
 }
 }

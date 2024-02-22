@@ -101,6 +101,28 @@ img{
     width: 75%;
 }
 
+.btn-revisor{
+    border: 1px solid var(--colore_primario);
+    border-radius: 5px;
+}
+
+.bottone:hover {
+    background-color: var(--colore_primario) !important;
+    color: var(--colore_secondario) !important;
+    transition: background-color 0.3s ease;
+}
+
+/* counter per revisore  */
+.counter{
+    height: 30px;
+    width: 30px;
+    margin-right: -5%;
+    margin-top: -8%;
+    border-radius: 50%;
+    color: var(--colore_secondario);
+    background-color: var(--colore_primario);
+}
+
 /* pagina annunci per categoria */
 .margin-header{
     margin-top: 80px;

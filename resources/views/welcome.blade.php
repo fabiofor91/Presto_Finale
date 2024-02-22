@@ -1,14 +1,31 @@
 <x-layout>
+  
   <div class="container nav-top">
     <div class="row justify-content-around">
-      <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
-        <h1 class="text-center display-1 my-5">Presto.it ItaliaUnita</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
-        @if (session('status'))
+      @if (session('access.denied'))
+      <div class="col-12 col-md-10">
+        <div class="d-flex justify-content-center alert alert-danger"> <br>
+          {{session('access.denied')}}
+        </div>
+      </div>
+      @endif
+      @if (session('status'))
+      <div class="col-12 col-md-10">
         <div class="alert alert-success">
           {{ session('status') }}
         </div>
-        @endif
+      </div>
+      @endif
+      @if (session('message'))
+      <div class="col-12 col-md-10">
+        <div class="alert alert-success">
+          {{ session('message') }}
+        </div>
+      </div>
+      @endif
+      <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
+        <h1 class="text-center display-1 my-5">Presto.it ItaliaUnita</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
       </div>
       <div class="col-12 col-md-5 ">
         <div id="carouselExampleCaptions" class="carousel slide">
@@ -55,8 +72,11 @@
   {{-- Sezione ultimi annunci --}}
   <div class="container my-5">
     <div class="row justify-content-center">
+      <div class="col-12">
+        <h3 class="text-center display-3">Ultimi Annunci</h3>
+      </div>
       @foreach ($announcements as $announcement)
-          
+      
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
         <div class="card" style="width: 18rem;">
           <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top" alt="immagine">
@@ -72,5 +92,5 @@
       @endforeach
     </div>
   </div>
-  <div class="vh-100"></div>
+  {{-- <div class="vh-100"></div> --}}
 </x-layout>

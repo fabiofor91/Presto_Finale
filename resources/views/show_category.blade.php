@@ -2,7 +2,7 @@
     <div class="container-fluid categori">
         <div class="row justify-content-center">
             <div class="col-12 margin-header my-5 border">
-                <h1 class="display-1 text-center">Categoria: {{$category->name}}</h1>
+                <h1 class="display-1 text-center">{{__('ui.category')}}: {{$category->name}}</h1>
             </div>
                 
             @forelse ($category->announcements as $announcement)
@@ -15,7 +15,7 @@
                             <h5 class="card-title text-center">{{$announcement->price}} €</h5>
                             <div class="text-center">
     
-                                <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1 mx-auto p-3">Vai al dettaglio</a>
+                                <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1 mx-auto p-3">{{__('ui.detail')}}</a>
                             </div>
                         </div>
                     </div>
@@ -23,8 +23,8 @@
                 @endif
             @empty
             <div class="col-12 col-md-6 d-flex justify-content-center flex-column">
-                <h4 class="text-center">Non sono presenti annunci relativi alla categoria {{$category->name}}</h4>
-                <a href="{{route('create_announcement')}}" class="btn btn-primary my-1">Inserisci un nuovo annuncio</a>
+                <h4 class="text-center">{{__('ui.no_ann_category')}} {{$category->name}}</h4>
+                <a href="{{route('create_announcement')}}" class="btn btn-primary my-1">{{__('ui.create_announcement')}}</a>
             </div>
             @endforelse
         </div>

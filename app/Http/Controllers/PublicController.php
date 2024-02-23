@@ -18,6 +18,7 @@ class PublicController extends Controller
     // pagina annunci per categoria 
     public function showCategory(Category $category){
         // dd($category);
+        
         return view('show_category', compact('category'));
     }
 

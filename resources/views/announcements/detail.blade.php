@@ -1,6 +1,51 @@
 <x-layout>
     <div class="container nav-top">
-        {{-- <div class="row justify-content-center">
+        <div class="row">
+            <div class="col-12 my-4">
+                <h1 class="text-center">Dettaglio dell'annuncio</h1>
+            </div>
+            <div class="col-12 col-md-6 my-3">
+
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+                    <div class="parallax-bg" data-swiper-parallax="-23%">carosello</div>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
+            <div class="col-12 col-md-6 my-3 border d-flex flex-column justify-content-center">
+                @if ($announcement->user)
+                    <p>Annuncio creato da: {{$announcement->user->name}}</p>  
+                @else
+                    <p>Annuncio anonimo</p>
+                @endif
+                <h4 class="fw-bold">{{$announcement->title}}</h4>
+                <h5>Prezzo: {{$announcement->price}} €</h4>
+                <p>{{$announcement->description}}</p>
+                <p>Annuncio creato il {{$announcement->created_at->format('d/m/y')}}</p>
+                <div>
+                <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">Tutti gli annunci</a>
+                    <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">Categoria {{$announcement->category->name}}</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+{{-- <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card" style="width: 18rem;">
                     <img src="https://picsum.photos/200/250" class="card-img-top" alt="immagine">
@@ -104,48 +149,5 @@
                 </div>
             </div>
         </div> --}}
-        <div class="row">
-            <div class="col-12 my-4">
-                <h1 class="text-center">Dettaglio dell'annuncio</h1>
-            </div>
-            <div class="col-12 col-md-6 my-3">
-
-                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
-                    <div class="parallax-bg" data-swiper-parallax="-23%"></div>
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
-                      </div>
-                      <div class="swiper-slide">
-                        <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
-                      </div>
-                      <div class="swiper-slide">
-                        <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="">
-                      </div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-6 my-3 border d-flex flex-column justify-content-center">
-                @if ($announcement->user)
-                    <p>Annuncio creato da: {{$announcement->user->name}}</p>  
-                @else
-                    <p>Annuncio anonimo</p>
-                @endif
-                <h4 class="fw-bold">{{$announcement->title}}</h4>
-                <h5>Prezzo: {{$announcement->price}} €</h4>
-                <p>{{$announcement->description}}</p>
-                <p>Annuncio creato il {{$announcement->created_at->format('d/m/y')}}</p>
-                <div>
-                <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">Tutti gli annunci</a>
-                    <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">Categoria {{$announcement->category->name}}</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>  
 
 </x-layout>

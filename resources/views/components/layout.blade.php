@@ -18,7 +18,7 @@
 </head>
 <body>
     <x-nav/>
-    <div class="min-vh-100">
+    <div class="min-vh-100 color">
 
         {{$slot}}
     </div>

@@ -11,10 +11,10 @@
     </div>
     <div class="col-12 col-md-4">
       <ul class="d-flex justify-content-end link">
-        <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="{{route('indexAnnouncements')}}" class="nav-link px-2 text-muted">Annunci</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">In lavorazione</a></li>
-        <li class="nav-item"><a href="{{route('form_revisor')}}" class="nav-link px-2 text-muted">Lavora con noi</a></li>
+        <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link px-2 text-muted testo-sottolineato">Home</a></li>
+        <li class="nav-item"><a href="{{route('indexAnnouncements')}}" class="nav-link px-2 text-muted testo-sottolineato">Annunci</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted testo-sottolineato">In lavorazione</a></li>
+        <li class="nav-item"><a href="{{route('form_revisor')}}" class="nav-link px-2 text-muted testo-sottolineato">Lavora con noi</a></li>
       </ul>
     </div>
   </div>

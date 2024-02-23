@@ -30,6 +30,9 @@ footer{
     height: 30px !important;
     width: 60px !important;
 }
+.testo-sottolineato:hover {
+    text-decoration: underline;
+}
 body{
     background-color: #f7b95bc0;
 }
@@ -109,7 +112,7 @@ img{
 }
 
 .border {
-        border: 2px solid #000;
+        border: 2px solid var(--colore_secondario);
         border-radius: 20px;
         padding: 10px
 }

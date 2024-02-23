@@ -31,7 +31,7 @@ class CreateAnnouncement extends Component
     protected $rules = [
         'title' => 'required|min:4',
         'description' => 'required|min:8',
-        'price' => 'required|numeric|max_digits:8',
+        'price' => 'required|numeric|max_digits:8|max_digits:6',
         'category' => 'required',
         'images.*' => 'image|max:1024',
         'temporary_images.*' =>'image|max:1024',
@@ -44,6 +44,7 @@ class CreateAnnouncement extends Component
         'description.min' => 'Inserisci almeno 8 caratteri',
         'price.max_digits' => 'daje che se stai qua sei un poveraccio, chi se lo compra il tuo articolo se ha più di 7 cifre?',
         'price.numeric' => 'Inserisci solo un numero',
+        'price.max_digits' => 'Massimo 6 cifre!',
         'temporary_images.*.images' => 'i file devono essere immagini',
         'temporary_images.*.max' => 'Immagini non superiori a 1Mb',
         'images.images' => 'Il file deve essere di tipo immagine',

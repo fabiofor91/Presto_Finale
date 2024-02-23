@@ -29,4 +29,11 @@ class PublicController extends Controller
         // dd($announcements);
         return view ('announcements.index', compact('announcements'));
     }
+
+    // funzione per settare lingua 
+    public function setLanguage($lang){
+        // dd($lang);
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
 }

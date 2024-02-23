@@ -2,14 +2,14 @@
   <div class="container-fluid registlogin">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h1 class="text-center display-1">Accedi</h1>
+            <h1 class="text-center display-1">{{__('ui.login')}}</h1>
         </div>
         <div class="col-12 col-md-6">
             <form method="POST" action="{{route('login')}}">
                 @csrf
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Indirizzo mail</label>
-                    <input type="email" class="form-control @error('email') is-invalid  @enderror" id="exampleInputEmail1" placeholder="mario@rossi.it" name="email">
+                    <label for="exampleInputEmail1" class="form-label">{{__('ui.mail_address')}}</label>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="mario@rossi.it" name="email">
                     @error('email')
                         <div class="alert alert-danger mt-2">mail o password non valida</div>
                     @enderror
@@ -21,7 +21,7 @@
                         <div class="alert alert-danger mt-2">password errata</div>  
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Accedi</button>
+                <button type="submit" class="btn btn-primary">{{__('ui.login')}}</button>
             </form>
         </div>
     </div>

@@ -55,10 +55,10 @@
             </button>
           </div>
           <div class="my-3">
-            <h5 class="card_title text-center">Annuncio: {{$announcement_to_check->title}}</h5>
-            <p class="card_text text-center">Descrizione: {{$announcement_to_check->description}}</p>
-            <p class="card_text text-center">Prezzo: {{$announcement_to_check->price}} €</p>
-            <p class="card_footer text-center">Pubblicato il {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
+            <h5 class="card_title text-center">{{__('ui.announcement')}}: {{$announcement_to_check->title}}</h5>
+            <p class="card_text text-center">{{__('ui.description')}}: {{$announcement_to_check->description}}</p>
+            <p class="card_text text-center">{{__('ui.price')}}: {{$announcement_to_check->price}} €</p>
+            <p class="card_footer text-center">{{__('ui.created_at')}} {{$announcement_to_check->created_at->format('d/m/Y')}}</p>
           </div>
         </div>
       </div>
@@ -69,14 +69,14 @@
           <form action="{{route('revisor.accept_announcement', ['announcement'=>$announcement_to_check])}}" method="POST">
             @csrf
             @method('PATCH')
-            <button class="btn bottone" type="submit">Accetta</button>
+            <button class="btn bottone" type="submit">{{__('ui.accept')}}</button>
           </form>
         </div>
         <div class="col-12 col-md-6">
           <form action="{{route('revisor.reject_announcement', ['announcement'=>$announcement_to_check])}}" method="post">
             @csrf
             @method('PATCH')
-            <button class="btn bottone" type="submit">Rifiuta</button>
+            <button class="btn bottone" type="submit">{{__('ui.refuse')}}</button>
           </form>
         </div>
       </div>

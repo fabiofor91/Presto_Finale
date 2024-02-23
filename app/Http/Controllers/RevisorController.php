@@ -41,18 +41,22 @@ public function becomeRevisor(Request $request)
 {
     // $user=Auth::user()->name;
     // dd($request);
-    $richiesta = [
-        'user'=> Auth::user(),
-        'description' => $request->description
-    ];
+    $name = Auth::user()->name;
+    $email = Auth::user()->email;
+    $description = $request->description;
+    $richiesta = compact('name', 'email', 'description');
+    // $richiesta = [
+    //     'user'=> Auth::user(),
+    //     'description' => $request->description
+    // ];
     // dd($richiesta);
     Mail::to('admin@presto.it')->send(new BecomeRevisor($richiesta));
         return redirect()->back()->with('message', 'Complimenti! Hai richiesto di diventare revisore correttamente');
 }
 
-public function makeRevisor(User $user)
+public function makeRevisor($email)
 {
-    Artisan::call('presto:makeUserRevisor', ["email"=>$user->email]);
+    Artisan::call('presto:makeUserRevisor', ["email"=>$email]);
     // dd('email');
     return redirect('/')->with('message', 'hai reso un utente  nuovo revisore');
 }

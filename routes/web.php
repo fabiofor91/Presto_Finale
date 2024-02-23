@@ -51,4 +51,7 @@ Route::get('/diventa_revisore', [RevisorController::class, 'formRevisor'])->midd
 Route::post('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 
 // * rendi utente revisore
-Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::get('/rendi/revisore/{email}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+// rotta per cambio lingua 
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

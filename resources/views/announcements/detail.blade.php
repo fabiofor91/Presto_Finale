@@ -106,7 +106,7 @@
         </div> --}}
         <div class="row">
             <div class="col-12 my-4">
-                <h1 class="text-center">Dettaglio dell'annuncio</h1>
+                <h1 class="text-center">{{__('ui.announcement_detail')}}</h1>
             </div>
             <div class="col-12 col-md-6 my-3">
 
@@ -130,17 +130,17 @@
             </div>
             <div class="col-12 col-md-6 my-3 border d-flex flex-column justify-content-center">
                 @if ($announcement->user)
-                    <p>Annuncio creato da: {{$announcement->user->name}}</p>  
+                    <p>{{__('ui.created_by')}}: {{$announcement->user->name}}</p>  
                 @else
-                    <p>Annuncio anonimo</p>
+                    <p>{{__('ui.anonymus_creator')}}</p>
                 @endif
                 <h4 class="fw-bold">{{$announcement->title}}</h4>
-                <h5>Prezzo: {{$announcement->price}} €</h4>
+                <h5>{{__('ui.price')}}: {{$announcement->price}} €</h4>
                 <p>{{$announcement->description}}</p>
-                <p>Annuncio creato il {{$announcement->created_at->format('d/m/y')}}</p>
+                <p>{{__('ui.created_at')}} {{$announcement->created_at->format('d/m/y')}}</p>
                 <div>
-                <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">Tutti gli annunci</a>
-                    <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">Categoria {{$announcement->category->name}}</a>
+                <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">{{__('ui.all_announcements')}}</a>
+                    <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.category')}} {{$announcement->category->name}}</a>
                 </div>
 
             </div>

@@ -9,12 +9,12 @@
 <body>
   <h1>Candidatura per posizione di revisore</h1>
   <ul>
-    <li>nome: {{Auth::user()->name}}</li>
-    <li>mail: {{Auth::user()->email}}</li>
+    <li>nome: {{$richiesta['name']}}</li>
+    <li>mail: {{$richiesta['email']}}</li>
     <li>descrizione: {{$richiesta['description']}}</li>
   </ul>
 
-  <a href="{{route('make.revisor', ['user'=>Auth::user()])}}">
+  <a href="{{route('make.revisor', ['email'=>$richiesta['email']])}}">
     <button type="submit" class="btn btn-outline-warning">Accetta la candidatura</button>
   </a>
   {{-- <form action="{{route('make.revisor', ['richiesta'=>$richiesta['description']])}}" method="POST" >

@@ -1,8 +1,10 @@
 :root{  
     --colore_primario: #1d1d1b ;
-    --colore_secondario: #ffed00 ;  
+    --colore_secondario: #F1E210 ;  
     --colore_terziario: #ffffff; 
 }
+
+/* #ffed00 */
 
 *{
     font-family: "Habibi", serif;
@@ -16,6 +18,24 @@
     font-style: normal;
 }
 
+footer{
+    background-color: var(--colore_secondario);
+    height: 40vh;   
+}
+.link{
+    list-style-type:none;
+}
+.pay{
+    display:flex ;
+    height: 30px !important;
+    width: 60px !important;
+}
+.testo-sottolineato:hover {
+    text-decoration: underline;
+}
+body{
+    background-color: #f7b95bc0;
+}
 .nav-custom{
     background-color: var(--colore_secondario) !important;
 }
@@ -76,6 +96,7 @@ img{
 
 /* bordo sezione accedi,registrati,inserisci il tuo annuncio */
 .registlogin, .registlogin2, .registlogin3 {
+    background-color: var(--colore_terziario);
     margin-top: 90px;
     padding: 20px;
     border: 2px solid var(--colore_secondario);
@@ -91,7 +112,7 @@ img{
 }
 
 .border {
-        border: 2px solid #d1ff2d;
+        border: 2px solid var(--colore_secondario);
         border-radius: 20px;
         padding: 10px
 }

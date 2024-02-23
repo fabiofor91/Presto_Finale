@@ -24,7 +24,8 @@
       </div>
       @endif
       <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
-        <h1 class="text-center display-1 my-5">Presto.it ItaliaUnita</h1>
+        <img src="/media/img/logoPresto.png" alt="">
+        <h1 class="text-center display-1 my-5">ItaliaUnita</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
       </div>
       <div class="col-12 col-md-5 ">
@@ -78,8 +79,8 @@
       @foreach ($announcements as $announcement)
       
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
-        <div class="card" style="width: 18rem;">
-          <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top" alt="immagine">
+        <div class="card border img" style="width: 18rem;">
+          <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top imgcard" alt="immagine">
           <div class="card-body">
             <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
             <h5 class="card-title">Prezzo: {{$announcement->price}} €</h5>

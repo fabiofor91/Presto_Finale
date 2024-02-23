@@ -3,20 +3,20 @@
     registlogin2">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h1 class="text-center display-1">Registrati</h1>
+                <h1 class="text-center display-1">{{__('ui.register')}}</h1>
             </div>
             <div class="col-12 col-md-6">
                 <form method="POST" action="{{route('register')}}">
                     @csrf
                     <div class="mb-3">
-                        <label for="inputName" class="form-label">Nome</label>
+                        <label for="inputName" class="form-label">{{__('ui.name')}}</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="inputName" placeholder="Mario Rossi" name="name">
                         @error('name')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label ">Indirizzo mail</label>
+                      <label for="exampleInputEmail1" class="form-label ">{{__('ui.mail_address')}}</label>
                       <input type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" placeholder="mario@rossi.it" name="email">
                         @error('email')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -30,13 +30,13 @@
                         @enderror
                       </div>
                     <div class="mb-3">
-                        <label for="exampleInputPasswordConfirmation" class="form-label">Conferma Password</label>
+                        <label for="exampleInputPasswordConfirmation" class="form-label">{{__('ui.confirmation')}}</label>
                         <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="exampleInputPasswordConfirmation" name="password_confirmation">
                         @error('password_confirmation')
                             <div class="alert alert-danger mt-2">{{ $message }}</div>
                         @enderror
                       </div>
-                    <button type="submit" class="btn btn-primary">Registrati</button>
+                    <button type="submit" class="btn btn-primary">{{__('ui.register')}}</button>
                 </form>
             </div>
         </div>

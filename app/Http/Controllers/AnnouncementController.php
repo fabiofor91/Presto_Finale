@@ -15,7 +15,7 @@ class AnnouncementController extends Controller
 
     // vista per creazione annunci 
     public function createAnnouncement(){
-        return view('announcements.create');
+        return view('announcements.create')->with('message', 'Utente registrato!');
     }
 
     // vista per dettaglio annuncio 

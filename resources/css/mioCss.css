@@ -1,8 +1,10 @@
 :root{  
     --colore_primario: #1d1d1b ;
-    --colore_secondario: #ffed00 ;  
+    --colore_secondario: #F1E210 ;  
     --colore_terziario: #ffffff; 
 }
+
+/* #ffed00 */
 
 *{
     font-family: "Habibi", serif;

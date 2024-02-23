@@ -18,7 +18,7 @@ class CreateAnnouncement extends Component
     protected $rules = [
         'title' => 'required|min:4',
         'description' => 'required|min:8',
-        'price' => 'required|numeric',
+        'price' => 'required|numeric|max_digits:6',
         'category' => 'required'
     ];
 
@@ -27,7 +27,8 @@ class CreateAnnouncement extends Component
         'required' => "Questo campo e' obbligatorio",
         'title.min' => "Inserisci almeno 4 caratteri",
         'description.min' => 'Inserisci almeno 8 caratteri',
-        'price.numeric' => 'Inserisci solo un numero'
+        'price.numeric' => 'Inserisci solo un numero',
+        'price.max_digits' => 'Massimo 6 cifre!'
     ];
 
     
@@ -35,7 +36,7 @@ class CreateAnnouncement extends Component
     // funzione per creazione annuncio 
     public function store(){
         // $validatedData = $this->validate();
-        // $this->validate();
+        $this->validate();
         // cerca la categoria 
         $category = Category::find($this->category);
         // crea l'annuncio appartenente alla categoria appena trovata con la funzione di relazione

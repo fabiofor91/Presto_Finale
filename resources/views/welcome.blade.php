@@ -73,7 +73,7 @@
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h3 class="text-center display-3">Ultimi Annunci</h3>
+        <h3 class="text-center display-3">{{__('ui.last_announcements')}}</h3>
       </div>
       @foreach ($announcements as $announcement)
       
@@ -82,10 +82,10 @@
           <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top" alt="immagine">
           <div class="card-body">
             <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
-            <h5 class="card-title">Prezzo: {{$announcement->price}} €</h5>
-            <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1">Vai al dettaglio</a>
-            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1">Vai alla categora {{$announcement->category->name}}</a>
-            <p class="card-footer">Annuncio creato il {{$announcement->created_at->format('d/m/Y')}}</p>
+            <h5 class="card-title">{{__('ui.price')}}: {{$announcement->price}} €</h5>
+            <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1">{{__('ui.detail')}}</a>
+            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1">{{__('ui.go_category')}} {{$announcement->category->name}}</a>
+            <p class="card-footer">{{__('ui.created_at')}} {{$announcement->created_at->format('d/m/Y')}}</p>
           </div>
         </div>
       </div>

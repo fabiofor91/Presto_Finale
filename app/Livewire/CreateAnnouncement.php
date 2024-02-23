@@ -9,6 +9,7 @@ use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Stmt\Foreach_;
+use Livewire\Attributes\Validate;
 
 class CreateAnnouncement extends Component
 {
@@ -20,8 +21,7 @@ class CreateAnnouncement extends Component
     public $price;
     public $category;
     public $validated;
-    public $temporary_images =[];
-    
+    public $temporary_images;
     public $images  = [];
     public $image;
     public $announcement;
@@ -33,7 +33,7 @@ class CreateAnnouncement extends Component
         'description' => 'required|min:8',
         'price' => 'required|numeric|max_digits:8|max_digits:6',
         'category' => 'required',
-        'images.*' => 'image|max:1024',
+        'image' => 'image|max:1024',
         'temporary_images.*' =>'image|max:1024',
     ];
 
@@ -45,20 +45,22 @@ class CreateAnnouncement extends Component
         'price.max_digits' => 'daje che se stai qua sei un poveraccio, chi se lo compra il tuo articolo se ha più di 7 cifre?',
         'price.numeric' => 'Inserisci solo un numero',
         'price.max_digits' => 'Massimo 6 cifre!',
-        'temporary_images.*.images' => 'i file devono essere immagini',
+        'temporary_images.*.image' => 'i file devono essere immagini',
         'temporary_images.*.max' => 'Immagini non superiori a 1Mb',
-        'images.images' => 'Il file deve essere di tipo immagine',
+        'images.image' => 'Il file deve essere di tipo immagine',
         'images.max' => 'Immagine non superiore a 1Mb'
         
     ];
 
     public function updatedTemporaryimages()
     {
+        $this->temporary_images;
         if($this->validate([
             'temporary_images.*'=>'image|max:1024',
         ])) {
             foreach($this->temporary_images as $image){
-                $this->images[]=$image;
+               $this->images[]=$image;
+                
             }
         }
     }
@@ -67,6 +69,7 @@ class CreateAnnouncement extends Component
     {
         if(in_array($key, array_keys($this->images))){
             unset($this->images[$key]);
+           
         }
     }
 
@@ -90,11 +93,11 @@ class CreateAnnouncement extends Component
         // ]
         // );
         // assegniamo lo user_id all'annuncio appena creato con la funzione di relazione 
-        $this->announcement = Category::find($this->category)->announcements()->create($announcement);
+        $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image)
             {
-                $this->announcement->images()->create(['path'=>$image->store('image', 'public')]);
+               $this->announcement->images()->create(['path'=>$image->store('image', 'public')]);
             }
         }
         Auth::user()->announcements()->save($this->announcement);
@@ -108,10 +111,10 @@ class CreateAnnouncement extends Component
         return redirect(route('create_announcement'))->with('status', 'Annuncio inserito! Sarà pubblicato dopo la revisione');
     }
 
-    // public function updated($propertyName)
-    // {
-    //     $this->validateOnly($propertyName);
-    // }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
     
    
     // funzione per pulire il form 

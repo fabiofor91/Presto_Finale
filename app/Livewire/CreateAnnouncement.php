@@ -20,7 +20,7 @@ class CreateAnnouncement extends Component
     public $price;
     public $category;
     public $validated;
-    public $temporary_images =[];
+    public $temporary_images = [];
     
     public $images  = [];
     public $image;
@@ -45,15 +45,16 @@ class CreateAnnouncement extends Component
         'price.max_digits' => 'daje che se stai qua sei un poveraccio, chi se lo compra il tuo articolo se ha più di 7 cifre?',
         'price.numeric' => 'Inserisci solo un numero',
         'price.max_digits' => 'Massimo 6 cifre!',
-        'temporary_images.*.images' => 'i file devono essere immagini',
+        'temporary_images.*.image' => 'i file devono essere immagini',
         'temporary_images.*.max' => 'Immagini non superiori a 1Mb',
-        'images.images' => 'Il file deve essere di tipo immagine',
-        'images.max' => 'Immagine non superiore a 1Mb'
+        'images.*.image' => 'Il file deve essere di tipo immagine',
+        'images.*.max' => 'Immagine non superiore a 1Mb'
         
     ];
 
-    public function updatedTemporaryimages()
+    public function updatedTemporaryImages()
     {
+        // dd($this->temporary_images);
         if($this->validate([
             'temporary_images.*'=>'image|max:1024',
         ])) {
@@ -61,6 +62,7 @@ class CreateAnnouncement extends Component
                 $this->images[]=$image;
             }
         }
+        // dd($this->images);
     }
 
     public function removeImage($key)
@@ -75,35 +77,45 @@ class CreateAnnouncement extends Component
     // funzione per creazione annuncio 
     public function store(){
         // $validatedData = $this->validate();
+        
+        $this->validate();
+        // $this->announcement->user()->associate(Auth::user());
 
-        // $this->validate();
+        // $this->announcement->save();
+        
         // // cerca la categoria 
-        // $category = Category::find($this->category);
+        $category = Category::find($this->category);
         // // crea l'annuncio appartenente alla categoria appena trovata con la funzione di relazione
-        // $announcement = $category->announcements()->create(
-        //     [
-        //     'title'=>$this->title,
-        //     'description'=>$this->description,
-        //     'price'=>$this->price,
+        $this->announcement = $category->announcements()->create(
+            [
+            'title'=>$this->title,
+            'description'=>$this->description,
+            'price'=>$this->price,
 
             
-        // ]
-        // );
+        ]
+        );
         // assegniamo lo user_id all'annuncio appena creato con la funzione di relazione 
-        $this->announcement = Category::find($this->category)->announcements()->create($announcement);
+        // $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image)
             {
                 $this->announcement->images()->create(['path'=>$image->store('image', 'public')]);
             }
         }
-        Auth::user()->announcements()->save($this->announcement);
+
+        $this->announcement->user()->associate(Auth::user());
+
+        $this->announcement->save();
+        // Auth::user()->announcements()->save($this->announcement);
+        // Auth::user()->announcements()->save($this->announcement);
         // Announcement::create($validatedData);
         //     [
         //     'title'=>$this->title,
         //     'description'=>$this->description,
         //     'price'=>$this->price
         // ]);
+        // dd($this->image);
         $this->clearForm();
         return redirect(route('create_announcement'))->with('status', 'Annuncio inserito! Sarà pubblicato dopo la revisione');
     }
@@ -116,15 +128,22 @@ class CreateAnnouncement extends Component
    
     // funzione per pulire il form 
     public function clearForm(){
-        ['title'=>$this->title = '',
-        'description'=>$this->description = '',
-        'price'=>$this->price = '',
-        'category'=>$this->category = '',
-        'images'=>$this->images = [],
+        $this->title = '';
+        $this->description = '';
+        $this->price = '';
+        $this->category = '';
+        $this->temporary_images = [];
+        $this->images = [];
+
+    //     ['title'=>$this->title = '',
+    //     'description'=>$this->description = '',
+    //     'price'=>$this->price = '',
+    //     'category'=>$this->category = '',
+    //     'images'=>$this->images = [],
         
-        //! da controllare
-        'temporary_images.*' => $this->temporary_images=[]
-    ];
+    //     //! da controllare
+    //     'temporary_images.*' => $this->temporary_images=[]
+    // ];
     }
 
     public function render()

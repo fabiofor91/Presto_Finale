@@ -24,7 +24,6 @@ class CreateAnnouncement extends Component
     public $temporary_images = [];
     
     public $images  = [];
-    public $image;
     public $announcement;
 
 
@@ -34,7 +33,7 @@ class CreateAnnouncement extends Component
         'description' => 'required|min:8',
         'price' => 'required|numeric|max_digits:8|max_digits:6',
         'category' => 'required',
-        'image' => 'image|max:1024',
+        'images.*' => 'image|max:1024',
         'temporary_images.*' =>'image|max:1024',
     ];
 

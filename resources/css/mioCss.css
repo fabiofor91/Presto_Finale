@@ -24,16 +24,27 @@ footer{
     height: 40vh;   
 }
 .link{
+    display: flex;
+    justify-content: end;
     list-style-type:none;
+    
 }
 .pay{
     display:flex ;
-    height: 30px !important;
-    width: 60px !important;
+}
+.imgpay{
+    height: 30px;
+    width: 60px;
+}
+
+.google-maps {
+    display: flex;
+    justify-content: end;
 }
 .testo-sottolineato:hover {
     text-decoration: underline;
 }
+
 body{
     background-color: #f7b95bc0;
 }
@@ -53,9 +64,12 @@ body{
     transition: background-color 0.3s ease;
 }
 
-
 img{
     border-radius: 2%;
+}
+.img-titolo{
+    height: 250px;
+    width: 600px;
 }
 
 .imgcard{
@@ -210,15 +224,17 @@ img{
 @media only screen and (max-width: 768px) {
     .navbar-nav {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: auto;
         margin-top: 10px;
     }
 
     .navbar-nav .nav-link {
         text-align: center;
-        width: 100%;
+    }
+
+    .nav {
+        margin-top: 10px; 
     }
 
     .dropdown-menu {
@@ -233,28 +249,84 @@ img{
 
 /* mediaquery smartphone */
 @media only screen and (max-width: 480px) {
+    .link{
+        display: flex;
+        justify-content: center;
+        list-style-type:none;
+        font-size: small;
+        
+    }
     .registlogin, .registlogin2, .registlogin3 {
         width: 80%; 
         margin-left: auto;
         margin-right: auto;
     }
+
+    .img-titolo{
+        height: 160px;
+        width: 100%;
+    }
+
+    .border {
+        width: 100%;
+        border: 2px solid var(--colore_secondario);
+        border-radius: 20px;
+        padding: 10px
+    }
+    .categori{
+        margin-top: 70px;
+        width: 100%;
+    }
+    footer {
+        height: auto;
+        padding: 20px;
+    }
+    .social{
+        display: flex;
+        justify-content: center;
+        margin: 12px 0px;
+
+    }
+
+    .google-maps {
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        width: 200px;
+        margin-left: 40px;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .pay {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pay img {
+        height: 20px !important;
+        width: auto !important;
+    }
 }
 
-footer {
-    border-top: none;
-  }
-  
-  /* Media query per footer */
-  @media only screen and (max-width: 768px) {
-    footer {
-      flex-direction: column; 
-      text-align: center; 
-    }
-  
-    .nav {
-      margin-top: 10px; 
+@media screen and (max-width: 992px) and (min-width: 769px){
+
+    .img-titolo{
+        height: 130px;
+        width: 100%;
     }
 
-    
-  }
+    .link{
+        display: flex;
+        justify-content: center;
+        list-style-type:none;
+        font-size: small;
+        
+    }
 
+}   
+
+ 

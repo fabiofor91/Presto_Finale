@@ -43,6 +43,16 @@ return [
     'refuse' => 'Rechazar',
     'announcement_to_revise' => "Aquí está el anuncio a revisar",
     'no_announcements_to_revise' => "No hay artículos para revisar",
-    'no_ann_category' => 'No hay anuncios relacionados con la categorìa'
-
+    'no_ann_category' => 'No hay anuncios relacionados con la categorìa',
+    // Categorie 
+    'abbigliamento' => 'ropa',
+    "scarpe" => 'calzado',
+    "accessori" => 'accesorios',
+    "elettronica" => 'electrònica',
+    "motori" => 'motores',
+    "arredamento" => 'mobiliario',
+    'libri' => 'libros',
+    'musica' => 'mùsica',
+    'film' => 'peliculas',
+    'sport' => 'deporte',
 ];

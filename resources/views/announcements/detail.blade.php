@@ -44,7 +44,7 @@
                     <p>{{__('ui.created_at')}} {{$announcement->created_at->format('d/m/y')}}</p>
                     <div>
                         <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">{{__('ui.all_announcements')}}</a>
-                        <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.category')}} {{$announcement->category->name}}</a>
+                        <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.category')}} {{__('ui.' . $announcement->category->name)}}</a>
                     </div>
                     
                 </div>

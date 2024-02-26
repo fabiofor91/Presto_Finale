@@ -85,7 +85,7 @@
             <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
             <h5 class="card-title">{{__('ui.price')}}: {{$announcement->price}} €</h5>
             <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1">{{__('ui.detail')}}</a>
-            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1">{{__('ui.go_category')}} {{$announcement->category->name}}</a>
+            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1">{{__('ui.go_category')}} {{__('ui.' . $announcement->category->name)}}</a>
             <p class="card-footer">{{__('ui.created_at')}} {{$announcement->created_at->format('d/m/Y')}}</p>
           </div>
         </div>

@@ -13,7 +13,7 @@
                         <h5 class="card-title text-center">{{$announcement->price}} €</h5>
                         <div class="d-flex flex-column align-items-center">
                             <a href="{{route('announcement_detail', $announcement)}}" class="btn btn-primary my-1">{{__('ui.detail')}}</a>
-                            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1 btn-dimension">{{__('ui.go_category')}} {{$announcement->category->name}}</a>
+                            <a href="{{route('showCategory', $announcement->category)}}" class="btn btn-primary my-1 btn-dimension">{{__('ui.go_category')}} {{__('ui.' . $announcement->category->name)}}</a>
                         </div>
                     </div>
                 </div>

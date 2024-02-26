@@ -4,10 +4,12 @@
       <div class="col-12 d-flex justify-content-center">
         <h1 class="display-3 text-center registlogin">
           {{-- messaggio con struttura di controllo --}}
-          {{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : "Non sono presenti articoli da revisionare"}}
-          {{-- <br>
-            <h2>sono presenti {{Annoi}}</h2> --}}
-            
+          {{-- {{$announcement_to_check ? "{{__('ui.announcement_to_revise')}}" : "{{__('ui.no_announcements_to_revise')}}"}} --}}
+          @if ($announcement_to_check)
+              {{__('ui.announcement_to_revise')}}
+          @else
+            {{__('ui.no_announcements_to_revise')}}
+          @endif      
         </h1>
       </div>
     </div>
@@ -23,7 +25,7 @@
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            @if ($announcement_to_check->images)
+            @if (count($announcement_to_check->images))
               @foreach ($announcement_to_check->images as $image)
                 <div class="carousel-inner">
                   <div class="carousel-item @if($loop->first)active @endif">
@@ -31,8 +33,7 @@
                   </div>
                 </div>
               @endforeach
-            @endif
-            @if ($announcement_to_check->images = [])
+            @else
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">

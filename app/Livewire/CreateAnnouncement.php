@@ -48,7 +48,6 @@ class CreateAnnouncement extends Component
         'price.numeric' => 'Inserisci solo un numero',
         'price.max_digits' => 'Massimo 6 cifre!',
         'temporary_images.*.image' => 'i file devono essere immagini',
-        'temporary_images.*.image' => 'i file devono essere immagini',
         'temporary_images.*.max' => 'Immagini non superiori a 1Mb',
         'images.*.image' => 'Il file deve essere di tipo immagine',
         'images.*.max' => 'Immagine non superiore a 1Mb'
@@ -109,10 +108,14 @@ class CreateAnnouncement extends Component
 
                 //    salva ogni immagine nella cartella announcements/id dell'annuncio 
                 $newFileName = "announcements/{$this->announcement->id}";
+                $newFileName2 = "announcements/{$this->announcement->id}";
                 // crea il nuovo file dove andra' l'immagine croppata 
                 $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
+                $newImage2 = $this->announcement->images()->create(['path'=>$image->store($newFileName2, 'public')]);
                 // dispatch spinge il Job in coda (metodo asincrono) 
                 dispatch(new ResizeImage($newImage->path, 250, 200));
+                dispatch(new ResizeImage($newImage2->path, 400, 300));
+
                 // dd($newImage);
             }
             // cancella le immagini in storage/app/livewire-tmp

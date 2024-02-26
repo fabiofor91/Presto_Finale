@@ -6,13 +6,13 @@
                 <h1 class="text-center">{{__('ui.announcement_detail')}}</h1>
             </div>
             <div class="col-12 col-md-6 my-3">
-                {{-- <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
                     <div class="parallax-bg" data-swiper-parallax="-23%"></div>
                     <div class="swiper-wrapper">
-                    @if ($announcement->images)
+                    @if (count($announcement->images))
                         @foreach ($announcement->images as $image)
                             <div class="swiper-slide">
-                                <img class="w-100" src="{{Storage::url($image->path)}}" alt="">
+                                <img class="w-100" src="{{$image->getUrl(400, 300)}}" alt="">
                             </div>
                         @endforeach
                     @else
@@ -30,45 +30,8 @@
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
-                </div> --}}
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    @if ($announcement->images)
-                      @foreach ($announcement->images as $image)
-                        <div class="carousel-inner">
-                          <div class="carousel-item @if($loop->first)active @endif">
-                            <img src="{{Storage::url($image->path)}}" {{--classe da implementare--}} class="d-block w-100" alt="...">  
-                          </div>
-                        </div>
-                      @endforeach
-                    @else
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="immagine">
-                          
-                        </div>
-                        <div class="carousel-item">
-                          <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">
-                        </div>
-                      </div>
-                    @endif
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-            </div>
+                </div>
+             </div>   
             <div class="col-12 col-md-6 my-3 border d-flex flex-column justify-content-center">
                 @if ($announcement->user)
                 <p>{{__('ui.created_by')}}: {{$announcement->user->name}}</p>  

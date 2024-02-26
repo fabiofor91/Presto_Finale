@@ -17,6 +17,8 @@ class PublicController extends Controller
 
     // pagina annunci per categoria 
     public function showCategory(Category $category){
+        // dd($category);
+        
         return view('show_category', compact('category'));
     }
 
@@ -31,6 +33,7 @@ class PublicController extends Controller
     // funzione per settare lingua 
     public function setLanguage($lang){
         // dd($lang);
+
         session()->put('locale', $lang);
         return redirect()->back();
     }

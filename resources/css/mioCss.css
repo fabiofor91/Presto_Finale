@@ -2,6 +2,7 @@
     --colore_primario: #1d1d1b ;
     --colore_secondario: #F1E210 ;  
     --colore_terziario: #ffffff; 
+    --colore-mio: #F78C5B;
 }
 
 /* #ffed00 */
@@ -177,6 +178,48 @@ img{
     background-color: var(--colore_secondario) !important;
 }
 
+/* Caroselloswiper  */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    /* background: #000; */
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+  }
+
+  .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+  }
+
+  .swiper-slide .subtitle {
+    font-size: 21px;
+  }
+
+  .swiper-slide .text {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
+  }
+
 /* mediaquery tablet */
 @media only screen and (max-width: 768px) {
     .navbar-nav {
@@ -197,6 +240,15 @@ img{
     .dropdown-menu {
         text-align: center;
     }
+}
+
+.img-preview{
+    height: 200px;
+    width: 200px;
+}
+
+/* mediaquery smartphone */
+@media only screen and (max-width: 480px) {
     .link{
         display: flex;
         justify-content: center;

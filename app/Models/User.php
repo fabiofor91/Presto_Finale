@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Announcement;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -45,7 +46,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function announcements(): HasMany
+    public function announcements():HasMany
     {
         return $this->hasMany(Announcement::class);
     }

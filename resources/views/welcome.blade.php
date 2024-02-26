@@ -84,7 +84,7 @@
       
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
         <div class="card border img" style="width: 18rem;">
-          <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top imgcard" alt="immagine">
+          <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(250, 200) : 'https://picsum.photos/250/200'}}" class="card-img-top imgcard" alt="immagine">
           <div class="card-body">
             <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
             <h5 class="card-title">{{__('ui.price')}}: {{$announcement->price}} €</h5>

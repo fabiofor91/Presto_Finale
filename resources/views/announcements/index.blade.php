@@ -7,7 +7,7 @@
             @forelse ($announcements as $announcement)
             <div class="col-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center ">
                 <div class="card border img" style="width: 18rem;">
-                    <img src="https://picsum.photos/200/25{{random_int('0', '9')}}" class="card-img-top imgcard" alt="immagine">
+                    <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200/200'}}" class="card-img-top imgcard" alt="immagine">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-center">{{$announcement->title}}</h5>
                         <h5 class="card-title text-center">{{$announcement->price}} €</h5>

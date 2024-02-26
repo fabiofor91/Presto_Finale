@@ -31,7 +31,8 @@
                   </div>
                 </div>
               @endforeach
-            @else
+            @endif
+            @if ($announcement_to_check->images = [])
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">

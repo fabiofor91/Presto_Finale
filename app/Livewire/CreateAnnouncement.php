@@ -2,11 +2,13 @@
 
 namespace App\Livewire;
 
+use App\Jobs\ResizeImage;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Stmt\Foreach_;
 use Livewire\Attributes\Validate;
@@ -103,8 +105,22 @@ class CreateAnnouncement extends Component
         if(count($this->images)){
             foreach($this->images as $image)
             {
-               $this->announcement->images()->create(['path'=>$image->store('image', 'public')]);
+            //    $this->announcement->images()->create(['path'=>$image->store('image', 'public')]);
+
+                //    salva ogni immagine nella cartella announcements/id dell'annuncio 
+                $newFileName = "announcements/{$this->announcement->id}";
+                // crea il nuovo file dove andra' l'immagine croppata 
+                $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
+                // dispatch spinge il Job in coda (metodo asincrono) 
+                dispatch(new ResizeImage($newImage->path, 250, 200));
+                // dd($newImage);
             }
+            // cancella le immagini in storage/app/livewire-tmp
+            // Quale classe File importare??? 
+            // File::deleteDirectory(storage_path('app/livewire-tmp'));
+
+            // o forse con Storage? 
+            Storage::deleteDirectory(storage_path('app/livewire-tmp'));
         }
 
         $this->announcement->user()->associate(Auth::user());
@@ -118,7 +134,7 @@ class CreateAnnouncement extends Component
         //     'description'=>$this->description,
         //     'price'=>$this->price
         // ]);
-        // dd($this->image);
+        // dd($this->images);
         $this->clearForm();
         return redirect(route('create_announcement'))->with('status', 'Annuncio inserito! Sarà pubblicato dopo la revisione');
     }

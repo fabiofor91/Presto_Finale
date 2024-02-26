@@ -2,16 +2,17 @@
 
 namespace App\Livewire;
 
-use App\Jobs\ResizeImage;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
+use PhpParser\Node\Stmt\Foreach_;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use PhpParser\Node\Stmt\Foreach_;
-use Livewire\Attributes\Validate;
 
 class CreateAnnouncement extends Component
 {
@@ -120,10 +121,10 @@ class CreateAnnouncement extends Component
             }
             // cancella le immagini in storage/app/livewire-tmp
             // Quale classe File importare??? 
-            // File::deleteDirectory(storage_path('app/livewire-tmp'));
+            File::deleteDirectory(storage_path('app/livewire-tmp'));
 
             // o forse con Storage? 
-            Storage::deleteDirectory(storage_path('app/livewire-tmp'));
+            // Storage::deleteDirectory(storage_path('app/livewire-tmp'));
         }
 
         $this->announcement->user()->associate(Auth::user());

@@ -17,13 +17,7 @@
                         @endforeach
                     @else
                         <div class="swiper-slide">
-                            <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="immagine">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="immagine2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="immagine3">
+                            <img class="w-100" src="/media/img/default.png" alt="immagine">
                         </div>
                     @endif
                     </div>

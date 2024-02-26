@@ -35,30 +35,86 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="10" aria-label="Slide 11"></button>
           </div>
           <div class="carousel-inner m-1">
-            <div class="carousel-item active">
-              <img src="/media/img/Saldi50%.png" class="d-block w-100" alt="...">
+            <div class="carousel-item active ">
+              <img src="/media/img/Saldi50%.png" class="d-block w-100 img-carousel" alt="...">
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/30{{random_int('0', '9')}}" class="d-block w-100" alt="...">
+            <div class="carousel-item ">
+              <img src="/media/img/clothing.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
+                <h5>Abbigliamento</h5>
                 <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/30{{random_int('0', '9')}}" class="d-block w-100" alt="...">
+            <div class="carousel-item ">
+              <img src="/media/img/shoes.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
+                <h5>scarpe</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/30{{random_int('0', '9')}}" class="d-block w-100" alt="...">
+            <div class="carousel-item ">
+              <img src="/media/img/accessories.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
+                <h5>accessori</h5>
                 <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="/media/img/elettronics.png" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>elettronica</h5>
+                <p>Some representative placeholder content for the fouth slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="/media/img/motors.png" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>motori</h5>
+                <p>Some representative placeholder content for the fifth slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="/media/img/arredamento.jpg" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>arredamento</h5>
+                <p>Some representative placeholder content for the sixth slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="/media/img/books.jpg" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>libri</h5>
+                <p>Some representative placeholder content for the seventh slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="https://picsum.photos/30{{random_int('0', '9')}}" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>musica</h5>
+                <p>Some representative placeholder content for the eight slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="/media/img/film.webp" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>film</h5>
+                <p>Some representative placeholder content for the nine slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img src="/media/img/sport.jpg" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>sport</h5>
+                <p>Some representative placeholder content for the tenth slide.</p>
               </div>
             </div>
           </div>
@@ -84,7 +140,7 @@
       
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
         <div class="card border img" style="width: 18rem;">
-          <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(250, 200) : 'https://picsum.photos/250/200'}}" class="card-img-top imgcard" alt="immagine">
+          <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(250, 200) : '/media/img/default.png'}}" class="card-img-top imgcard" alt="immagine">
           <div class="card-body">
             <h5 class="card-title fw-bold">{{$announcement->title}}</h5>
             <h5 class="card-title">{{__('ui.price')}}: {{$announcement->price}} €</h5>

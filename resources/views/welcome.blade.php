@@ -24,7 +24,7 @@
       </div>
       @endif
       <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
-        <img src="/media/img/logoPresto.png" alt="">
+        <img class="img-titolo" src="/media/img/logoPresto.png" alt="">
         <h1 class="text-center display-1 my-5">ItaliaUnita</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
       </div>
@@ -34,9 +34,13 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
           </div>
           <div class="carousel-inner m-1">
             <div class="carousel-item active">
+              <img src="/media/img/Saldi50%.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
               <img src="https://picsum.photos/30{{random_int('0', '9')}}" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>

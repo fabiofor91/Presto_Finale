@@ -1,5 +1,5 @@
 <x-layout>
-  <div class="container-fluid registlogin">
+  <div class="container-fluid registlogin card-custom mb-5">
     <div class="row justify-content-center">
         <div class="col-12">
             <h1 class="text-center display-1">{{__('ui.login')}}</h1>

@@ -16,9 +16,9 @@
     {{-- link swiper  --}}
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>   
 </head>
-<body class="">
+<body>
     <x-nav/>
-    <div class="min-vh-100 color">
+    <div class=" color">
 
         {{$slot}}
     </div>

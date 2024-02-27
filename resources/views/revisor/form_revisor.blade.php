@@ -1,5 +1,5 @@
 <x-layout>
-  <div class="container">
+  <div class="container card-custom m-5">
       <div class="row justify-content-center">
           <div class="col-12 nav-top">
               @if (session('message'))

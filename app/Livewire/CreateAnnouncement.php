@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
@@ -108,23 +110,25 @@ class CreateAnnouncement extends Component
             //    $this->announcement->images()->create(['path'=>$image->store('image', 'public')]);
 
                 //    salva ogni immagine nella cartella announcements/id dell'annuncio 
-                // $newFileName = "announcements/{$this->announcement->id}";
-                $newFileName2 = "announcements/{$this->announcement->id}";
+                
+                $newFileName = "announcements/{$this->announcement->id}";
                 // crea il nuovo file dove andra' l'immagine croppata 
-                // $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
-                $newImage2 = $this->announcement->images()->create(['path'=>$image->store($newFileName2, 'public')]);
+                
+                $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
                 // dispatch spinge il Job in coda (metodo asincrono) 
-                dispatch(new ResizeImage($newImage2->path, 250, 200));
-                dispatch(new ResizeImage($newImage2->path, 400, 300));
+                dispatch(new ResizeImage($newImage->path, 250, 200));
+                dispatch(new ResizeImage($newImage->path, 400, 300));
 
+                // Google safesearch
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                // Google Labels
+                dispatch(new GoogleVisionLabelImage(($newImage->id)));
                 // dd($newImage);
             }
             // cancella le immagini in storage/app/livewire-tmp
             // Quale classe File importare??? 
             File::deleteDirectory(storage_path('app/livewire-tmp'));
 
-            // o forse con Storage? 
-            // Storage::deleteDirectory(storage_path('app/livewire-tmp'));
         }
 
         $this->announcement->user()->associate(Auth::user());

@@ -2,14 +2,14 @@
     <div class="container-fluid categori card-custom">
         <div class="row justify-content-center">
             <div class="col-12 margin-header my-5 border">
-                <h1 class="display-1 text-center">{{__('ui.category')}}: {{$category->name}}</h1>
+                <h1 class="display-1 text-center">{{__('ui.category')}}: {{__("ui.$category->name")}}</h1>
             </div>
                 
             @forelse ($category->announcements as $announcement)
                 @if ($announcement->is_accepted)
                 <div class="col-12 col-md-6 col-lg-4 my-1 d-flex justify-content-center card-custom">
                     <div class="card p-2" style="width: 18rem;">
-                        <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(250, 200) : 'https://picsum.photos/250/200'}}" class="card-img-top imgcard" alt="immagine">
+                        <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(250, 200) : '/media/img/default.png'}}" class="card-img-top imgcard" alt="immagine">
                         <div class="card-body p-0 mt-3">
                             <h5 class="card-title fw-bold text-center">{{$announcement->title}}</h5>
                             <h5 class="card-title text-center">{{$announcement->price}} €</h5>

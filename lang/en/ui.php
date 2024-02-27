@@ -42,7 +42,18 @@ return [
     'refuse' => 'Refuse',
     'announcement_to_revise' => "Here the announcement to revise",
     'no_announcements_to_revise' => "There are no annoucements to revise",
-    'no_ann_category' => 'There are no announcements related to the category'
+    'no_ann_category' => 'There are no announcements related to the category',
+    // Categorie 
+    'abbigliamento' => "clothing",
+    "scarpe" => "shoes",
+    "accessori" => "accessories",
+    "elettronica" => "elettronics",
+    "motori" => "motors",
+    "arredamento" => "forniture",
+    'libri' => 'books', 
+    'musica' => 'music', 
+    'film' => "film", 
+    'sport' => 'sport',
 
 
 ];

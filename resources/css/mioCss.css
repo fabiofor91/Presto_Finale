@@ -127,7 +127,7 @@ img{
 }
 
 .border {
-        border: 2px solid var(--colore_secondario);
+        border: 2px solid var(--colore_secondario) !important;
         border-radius: 20px;
         padding: 10px
 }
@@ -220,6 +220,13 @@ img{
     line-height: 1.3;
   }
 
+  /* immagini carosello */
+.img-carousel{
+    height: 376px;
+    width: 376px;
+    
+}
+
 /* mediaquery tablet */
 @media only screen and (max-width: 768px) {
     
@@ -241,6 +248,18 @@ img{
     .dropdown-menu {
         text-align: center;
     }
+}
+
+.img-preview{
+    height: 300px;
+    width: 300px;
+    /* background-position: center; */
+    /* background-size: contain; */
+    
+}
+
+/* mediaquery smartphone */
+@media only screen and (max-width: 480px) {
     .link{
         display: flex;
         justify-content: center;

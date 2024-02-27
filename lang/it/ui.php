@@ -43,8 +43,16 @@ return [
     'refuse' => 'Rifiuta',
     'announcement_to_revise' => "Ecco l'annuncio da revisionare",
     'no_announcements_to_revise' => "Non sono presenti annunci da revisionare",
-    'no_ann_category' => 'Non sono presenti annunci relativi alla categoria'
-
-
-
+    'no_ann_category' => 'Non sono presenti annunci relativi alla categoria',
+    // Categorie 
+    'abbigliamento' => "abbigliamento",
+    "scarpe" => "scarpe",
+    "accessori" => "accessori",
+    "elettronica" => "elettronica",
+    "motori" => "motori",
+    "arredamento" => "arredamento",
+    'libri' => 'libri', 
+    'musica' => 'musica', 
+    'film' => "film", 
+    'sport' => 'sport',
 ];

@@ -20,33 +20,21 @@
       <div class="row justify-content-center">
         <div class="col-12 col-md-6">
           <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
             @if (count($announcement_to_check->images))
               @foreach ($announcement_to_check->images as $image)
+              {{-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="next" class="active" aria-current="true" aria-label="Slide 1"></button>
+              </div> --}}
                 <div class="carousel-inner">
                   <div class="carousel-item @if($loop->first)active @endif">
-                    <img src="{{Storage::url($image->path)}}" {{--classe da implementare--}} class="d-block w-100" alt="...">  
+                    <img src="{{$image->getUrl()}}" {{--classe da implementare--}} class="d-block w-100" alt="...">  
                   </div>
                 </div>
               @endforeach
-            @else
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">
-                  
-                </div>
-                <div class="carousel-item">
-                  <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="https://picsum.photos/250/20{{random_int('0', '9')}}" class="d-block w-100" alt="...">
-                </div>
-              </div>
-            @endif
+              @if (count($announcement_to_check->images) > 2)
+              {{-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="next" class="active" aria-current="true" aria-label="Slide 1"></button>
+              </div>     --}}
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -55,6 +43,17 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
+              @endif
+            @else
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 1"></button>
+            </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/media/img/default.png" class="d-block w-100" alt="...">
+                </div>
+            @endif
+              
             </div>
             <div class="my-3">
               <h5 class="card_title text-center">{{__('ui.announcement')}}: {{$announcement_to_check->title}}</h5>

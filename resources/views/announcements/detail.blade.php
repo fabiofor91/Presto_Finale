@@ -17,13 +17,7 @@
                         @endforeach
                     @else
                         <div class="swiper-slide">
-                            <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="immagine">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="immagine2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="w-100" src="https://picsum.photos/500/25{{random_int('0', '9')}}" alt="immagine3">
+                            <img class="w-100" src="/media/img/default.png" alt="immagine">
                         </div>
                     @endif
                     </div>
@@ -44,7 +38,7 @@
                     <p>{{__('ui.created_at')}} {{$announcement->created_at->format('d/m/y')}}</p>
                     <div>
                         <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">{{__('ui.all_announcements')}}</a>
-                        <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.category')}} {{$announcement->category->name}}</a>
+                        <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.category')}} {{__('ui.' . $announcement->category->name)}}</a>
                     </div>
                     
                 </div>

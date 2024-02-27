@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid registlogin3">
+    <div class="container-fluid registlogin3 my-5 card-custom">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h1 class="display-1 text-center">{{__('ui.insert_announcement')}}</h1>

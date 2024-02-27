@@ -222,6 +222,7 @@ img{
 
 /* mediaquery tablet */
 @media only screen and (max-width: 768px) {
+    
     .navbar-nav {
         display: flex;
         align-items: center;
@@ -240,15 +241,6 @@ img{
     .dropdown-menu {
         text-align: center;
     }
-}
-
-.img-preview{
-    height: 200px;
-    width: 200px;
-}
-
-/* mediaquery smartphone */
-@media only screen and (max-width: 480px) {
     .link{
         display: flex;
         justify-content: center;
@@ -266,7 +258,9 @@ img{
         height: 160px;
         width: 100%;
     }
-
+    .card-custom{
+        padding: 30px;
+    }
     .border {
         width: 100%;
         border: 2px solid var(--colore_secondario);
@@ -310,9 +304,30 @@ img{
         height: 20px !important;
         width: auto !important;
     }
+    .img-preview{
+        height: 200px;
+        width: 200px;
+    }
 }
 
-@media screen and (max-width: 992px) and (min-width: 769px){
+
+
+@media screen and (max-width: 995px) and (min-width: 768px){
+
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+
+    .nav {
+        margin-top: 10px; 
+    }
 
     .img-titolo{
         height: 130px;
@@ -321,10 +336,25 @@ img{
 
     .link{
         display: flex;
+        flex-direction: column;
+        text-align: center;
         justify-content: center;
         list-style-type:none;
-        font-size: small;
+        font-size: 20px;
+        flex-wrap: wrap;
+        margin: 10px;
         
+    }
+    .google-maps {
+        display: flex;
+        justify-content: space-between;
+        height: 100px;
+        width: 200px;
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    .card-custom{
+        padding: 30px;
     }
 
 }   

@@ -1,4 +1,4 @@
-<div>
+<div">
     <form wire:submit.prevent="store">
         @csrf
         <div class="mb-3">

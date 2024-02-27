@@ -1,6 +1,6 @@
 
 <footer class="container-fluid">
-  <div class="row flex-wrap justify-content-between align-items-center p-0 m-0 border-top">
+  <div class="row flex-wrap justify-content-between align-items-center p-0 m-0 ">
     <div class="col-12 col-md-4 my-3">
       <p>&copy; 2024 Aulab: Fabio Forgiarini . Francesco Giusto . Michele Di Martino . Armando Campanella </p>
     </div>

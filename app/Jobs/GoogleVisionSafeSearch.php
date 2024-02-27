@@ -56,7 +56,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $racy = $safe->getRacy();
 
         $likelihoodName = [
-            /*unknown*/ 'gray_light', /*very unlikely*/ 'green_light', /*unlikely*/ 'acquamarine-light', /*possible*/ 'yellow_light', /*likely*/ 'orange_light', /*very likely*/ 'red_light'
+            /*unknown*/ 'gray_light', /*very unlikely*/ 'green_light', /*unlikely*/ 'aquamarine_light', /*possible*/ 'yellow_light', /*likely*/ 'orange_light', /*very likely*/ 'red_light'
         ];
 
         $i->adult = $likelihoodName[$adult];

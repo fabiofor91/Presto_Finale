@@ -180,17 +180,47 @@ img{
 
 /* Semaforo safesearch */
 
-.gray_light{color: gray;}
+.gray_light{
+    background-color: gray;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
  
-.green_light{color: green;}
+.green_light{
+    background-color: green;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
 
- .aquamarine_light{color: aquamarine;}
+.aquamarine_light{
+    background-color: aquamarine;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
 
-.yellow_light{color: yellow;}
+.yellow_light{
+    background-color: yellow;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
 
-.orange_light{color: orange;}
+.orange_light{
+    background-color: orange;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
 
-.red_light{color: red};
+.red_light{
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
 
 /* Caroselloswiper  */
 

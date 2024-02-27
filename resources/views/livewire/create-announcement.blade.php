@@ -29,7 +29,7 @@
             <select wire:model.defer.live="category" class="form-select @error('category') is-invalid @enderror" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>{{__('ui.categories')}}</option>
                 @foreach ($categories as $category)
-                <option value="{{$category->id}}">{{$category->name}}</option>
+                <option value="{{$category->id}}">{{__("ui.$category->name")}}</option>
                 @endforeach
             </select>
             @error('category')

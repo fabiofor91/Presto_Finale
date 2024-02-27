@@ -21,17 +21,18 @@
         <div class="col-12 col-md-6">
           <div id="carouselExampleIndicators" class="carousel slide">
             @if (count($announcement_to_check->images))
+            {{-- @dd(count($announcement_to_check->images)) --}}
               @foreach ($announcement_to_check->images as $image)
               {{-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="next" class="active" aria-current="true" aria-label="Slide 1"></button>
               </div> --}}
                 <div class="carousel-inner">
                   <div class="carousel-item @if($loop->first)active @endif">
-                    <img src="{{$image->getUrl()}}" {{--classe da implementare--}} class="d-block w-100" alt="...">  
+                    <img src="{{$image->getUrl(250, 200)}}" {{--classe da implementare--}} class="d-block w-100" alt="...">  
                   </div>
                 </div>
               @endforeach
-              @if (count($announcement_to_check->images) > 2)
+              @if (count($announcement_to_check->images) >= 2)
               {{-- <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="next" class="active" aria-current="true" aria-label="Slide 1"></button>
               </div>     --}}

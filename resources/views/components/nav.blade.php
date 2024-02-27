@@ -8,7 +8,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav d-flex mx-auto">
-          <a class="nav-link active mx-5" aria-current="true" href="{{route('welcome')}}">Home</a>
           {{-- Dropdown categorie  --}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" aria-current="true" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

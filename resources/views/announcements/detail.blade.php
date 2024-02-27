@@ -12,7 +12,7 @@
                     @if (count($announcement->images))
                         @foreach ($announcement->images as $image)
                             <div class="swiper-slide">
-                                <img class="w-100" src="{{$image->getUrl(400, 300)}}" alt="">
+                                <img class="w-100" src="{{$image->getUrl(250, 200)}}" alt="">
                             </div>
                         @endforeach
                     @else

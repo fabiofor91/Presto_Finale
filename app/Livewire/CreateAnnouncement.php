@@ -12,6 +12,7 @@ use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use PhpParser\Node\Stmt\Foreach_;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -134,15 +135,7 @@ class CreateAnnouncement extends Component
         $this->announcement->user()->associate(Auth::user());
 
         $this->announcement->save();
-        // Auth::user()->announcements()->save($this->announcement);
-        // Auth::user()->announcements()->save($this->announcement);
-        // Announcement::create($validatedData);
-        //     [
-        //     'title'=>$this->title,
-        //     'description'=>$this->description,
-        //     'price'=>$this->price
-        // ]);
-        // dd($this->images);
+        
         $this->clearForm();
         return redirect(route('create_announcement'))->with('status', 'Annuncio inserito! Sarà pubblicato dopo la revisione');
     }

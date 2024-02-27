@@ -267,8 +267,7 @@ img{
 .img-preview{
     height: 300px;
     width: 300px;
-    /* background-position: center; */
-    /* background-size: contain; */
+   
     
 }
 
@@ -391,5 +390,17 @@ img{
     }
 
 }   
+
+.gray_light{color: gray;}
+ 
+.green_light{color: green;}
+
+ .aquamarine_light{color: aquamarine;}
+
+.yellow_light{color: yellow;}
+
+.orange_light{color: orange;}
+
+.red_light{color: red};
 
  

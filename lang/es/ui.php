@@ -55,4 +55,10 @@ return [
     'musica' => 'mùsica',
     'film' => 'peliculas',
     'sport' => 'deporte',
+    'image_revise' => 'Revisión de imágenes',
+    'adult' => 'Adultos',
+    'medical' => "Medicina",
+    'spoof' => 'Sátira',
+    'violence' => 'Violencia',
+    'racy' => 'Contenido Atrevido',
 ];

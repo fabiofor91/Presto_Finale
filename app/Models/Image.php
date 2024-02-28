@@ -14,6 +14,10 @@ class Image extends Model
 
     protected $fillable = ['path'];
 
+    protected $casts = [
+        'labels' => 'array'
+    ];
+
     public function announcement():BelongsTo
     {
         return $this->belongsTo(Announcement::class);
@@ -22,7 +26,7 @@ class Image extends Model
     // funzione statica per recuperare il path dell'immagine croppata 
     public static function getUrlByFilePath($filePath, $w = null, $h = null)
     {
-        if(! $w && ! $h){
+        if(!$w && !$h){
             // se non esistono le dimensioni allora ritorna l'immagine originale
             return Storage::url($filePath);
         } else {

@@ -23,7 +23,7 @@
                 @endif
             @empty
             <div class="col-12 col-md-6 d-flex justify-content-center flex-column">
-                <h4 class="text-center">{{__('ui.no_ann_category')}} {{$category->name}}</h4>
+                <h4 class="text-center">{{__('ui.no_ann_category')}} {{__("ui.$category->name")}}</h4>
                 <a href="{{route('create_announcement')}}" class="btn btn-primary my-1">{{__('ui.create_announcement')}}</a>
             </div>
             @endforelse

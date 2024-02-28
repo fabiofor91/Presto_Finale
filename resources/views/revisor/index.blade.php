@@ -22,15 +22,36 @@
       <div class="col-12 my-4">
         <h1 class="text-center">{{__('ui.announcement_detail')}}</h1>
       </div>
-      <div class="col-12 col-md-6 my-3">
+      <div class="col-12 col-md-9 my-3">
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
           <div class="parallax-bg" data-swiper-parallax="-23%"></div>
           <div class="swiper-wrapper">
             @if (count($announcement_to_check->images))
             @foreach ($announcement_to_check->images as $image)
-            <div class="swiper-slide">
-              <img class="w-100" src="{{$image->getUrl(250, 200)}}" alt="">
+            <div  class="swiper-slide d-flex">
+              <div class="col-8 border">
+                <img class="w-100" src="{{$image->getUrl(250, 200)}}" alt="">
+              </div>
+              <div class="col-4 border-left ">
+                <h4 style="color:">{{__('ui.image_revise')}}</h4>
+                  <ul class="d-flex flex-column p-0">
+                    <li class="d-flex">{{__('ui.adult')}}: <div class="{{$image->adult}} ms-auto my-auto"></div></li>
+                    <li class="d-flex">{{__('ui.medical')}}: <div class="{{$image->medical}} ms-auto my-auto"></div></li>
+                    <li class="d-flex">{{__('ui.spoof')}}: <div class="{{$image->spoof}} ms-auto my-auto"></div></li>
+                    <li class="d-flex">{{__('ui.violence')}}: <div class="{{$image->violence}} ms-auto my-auto"></div></li>
+                    <li class="d-flex">{{__('ui.racy')}}: <div class="{{$image->racy}} ms-auto my-auto"></div></li>
+                  </ul>
+                <h4 class="my-2">Tags</h4>
+                @if ($image->labels)
+                    
+                @foreach ($image->labels as $label)
+                    <span class="my-2">{{$label}},</span>
+                @endforeach
+                @endif
+              </div>
             </div>
+            
+            
             @endforeach
             @else
             <div class="swiper-slide">
@@ -45,7 +66,7 @@
       </div>   
       
       {{-- c --}}
-      <div class="col-12 col-md-6 my-3 d-flex border">
+      <div class="col-12 col-md-3 my-3 d-flex border">
         <div class="container-fluid d-flex flex-column justify-content-center">
           <div class="row">
             <div class="col-6 ">
@@ -73,7 +94,7 @@
             </div>
             @if (count($announcement_to_check->images))
                 @foreach ($announcement_to_check->images as $image)
-                    
+{{--                     
                 <div class="col-6 border-left bg-white"  data-bs-theme="dark">
                   <h4 >{{__('ui.image_revise')}}</h4>
                     <ul class="d-flex flex-column p-0">
@@ -90,7 +111,7 @@
                       <span class="my-2">{{$label}},</span>
                   @endforeach
                   @endif
-                </div>
+                </div> --}}
                 @endforeach
             @endif
           </div>

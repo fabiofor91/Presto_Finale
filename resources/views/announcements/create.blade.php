@@ -9,7 +9,7 @@
                     </div>
                 @endif
             </div>
-            <div class="col-12 col-md-6 registlogin3">
+            <div class="col-12 col-md-6 registlogin3 my-5">
                 <livewire:create-announcement/>
             </div>
         </div>

@@ -121,7 +121,7 @@ img{
 /* bordo sezione accedi,registrati,inserisci il tuo annuncio */
 .registlogin, .registlogin2, .registlogin3 {
     background-color: var(--colore_terziario);
-    margin-top: 90px;
+    /* margin-top: 90px; */
     padding: 20px;
     box-shadow: 2px 2px 10px black;
     /* border: 2px solid var(--colore_secondario); */

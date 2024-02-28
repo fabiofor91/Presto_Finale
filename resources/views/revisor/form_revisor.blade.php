@@ -7,7 +7,7 @@
               {{ session('message') }}
               </div>
               @endif
-              <h1 class="text-center display-2">{{__('ui.work_with_us')}}!</h1>
+              <h1 class="text-center display-2"><span class="titleCreate">{{__('ui.work_with_us')}}!</span></h1>
               <h2 class="text-center display-5">{{__('ui.become_revisor')}}</h2>
           </div>
           <div class="col-12 col-md-6 d-flex flex-column align-items-center">

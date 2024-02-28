@@ -165,8 +165,8 @@ img{
 .counter{
     height: 30px;
     width: 30px;
-    margin-right: -5%;
-    margin-top: -8%;
+    /* margin-right: 3%;
+    margin-top: 3%; */
     border-radius: 50%;
     color: var(--colore_secondario);
     background-color: var(--colore_primario);

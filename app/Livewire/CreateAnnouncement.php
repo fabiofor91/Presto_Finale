@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\RemoveFaces;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
@@ -117,14 +118,21 @@ class CreateAnnouncement extends Component
                 
                 $newImage = $this->announcement->images()->create(['path'=>$image->store($newFileName, 'public')]);
                 // dispatch spinge il Job in coda (metodo asincrono) 
-                dispatch(new ResizeImage($newImage->path, 250, 200));
-                dispatch(new ResizeImage($newImage->path, 400, 300));
+                // dispatch(new ResizeImage($newImage->path, 250, 200));
+                // dispatch(new ResizeImage($newImage->path, 400, 300));
 
                 // Google safesearch
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                // dispatch(new GoogleVisionSafeSearch($newImage->id));
                 // Google Labels
-                dispatch(new GoogleVisionLabelImage(($newImage->id)));
+                // dispatch(new GoogleVisionLabelImage($newImage->id));
                 // dd($newImage);
+
+                // catena di jobs 
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 250, 200),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id)
+                ])->dispatch($newImage->id);
             }
             // cancella le immagini in storage/app/livewire-tmp
             // Quale classe File importare??? 

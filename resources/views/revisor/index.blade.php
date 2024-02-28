@@ -1,5 +1,5 @@
 <x-layout>
-  <div class="container min-vh-100">
+  <div class="container ">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
         <h1 class="display-3 text-center registlogin">
@@ -29,7 +29,7 @@
             @if (count($announcement_to_check->images))
             @foreach ($announcement_to_check->images as $image)
             <div class="swiper-slide">
-              <img class="w-100" src="{{$image->getUrl(400, 300)}}" alt="">
+              <img class="w-100" src="{{$image->getUrl(250, 200)}}" alt="">
             </div>
             @endforeach
             @else
@@ -71,20 +71,28 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 border-left bg-white"  data-bs-theme="dark">
-              <h4 >Revisione Immagini</h4>
-                <ul class="d-flex flex-column p-0">
-                  <li class="d-flex">Adulti: <div class="{{$image->adult}} ms-auto my-auto"></div></li>
-                  <li class="d-flex">Medicina: <div class="{{$image->medical}} ms-auto my-auto"></div></li>
-                  <li class="d-flex">Satira: <div class="{{$image->spoof}} ms-auto my-auto"></div></li>
-                  <li class="d-flex">Violenza: <div class="{{$image->violence}} ms-auto my-auto"></div></li>
-                  <li class="d-flex m-0">Contenuto Ammiccante: <div class="{{$image->racy}} ms-auto my-auto"></div></li>
-                </ul>
-              <h4 class="my-2">Tags</h4>
-                @foreach ($image->labels as $label)
-                    <span class="my-2">{{$label}},</span>
+            @if (count($announcement_to_check->images))
+                @foreach ($announcement_to_check->images as $image)
+                    
+                <div class="col-6 border-left bg-white"  data-bs-theme="dark">
+                  <h4 >{{__('ui.image_revise')}}</h4>
+                    <ul class="d-flex flex-column p-0">
+                      <li class="d-flex">{{__('ui.adult')}}: <div class="{{$image->adult}} ms-auto my-auto"></div></li>
+                      <li class="d-flex">{{__('ui.medical')}}: <div class="{{$image->medical}} ms-auto my-auto"></div></li>
+                      <li class="d-flex">{{__('ui.spoof')}}: <div class="{{$image->spoof}} ms-auto my-auto"></div></li>
+                      <li class="d-flex">{{__('ui.violence')}}: <div class="{{$image->violence}} ms-auto my-auto"></div></li>
+                      <li class="d-flex">{{__('ui.racy')}}: <div class="{{$image->racy}} ms-auto my-auto"></div></li>
+                    </ul>
+                  <h4 class="my-2">Tags</h4>
+                  @if ($image->labels)
+                      
+                  @foreach ($image->labels as $label)
+                      <span class="my-2">{{$label}},</span>
+                  @endforeach
+                  @endif
+                </div>
                 @endforeach
-            </div>
+            @endif
           </div>
               
         </div>

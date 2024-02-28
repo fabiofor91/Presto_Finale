@@ -51,7 +51,6 @@
               <img src="/media/img/clothing.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Abbigliamento</h5>
-                <p>Some representative placeholder content for the first slide.</p>
               </div>
             </div>
             <div class="carousel-item ">

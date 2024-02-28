@@ -1,10 +1,10 @@
 <x-layout>
-  <div class="container-fluid registlogin card-custom mb-5">
+  <div class="container-fluid card-custom mb-5">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h1 class="text-center display-1">{{__('ui.login')}}</h1>
+            <h1 class="text-center display-1"><span class="titleCreate">{{__('ui.login')}}</span></h1>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 registlogin">
             <form method="POST" action="{{route('login')}}">
                 @csrf
                 <div class="mb-3">

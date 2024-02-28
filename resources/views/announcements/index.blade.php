@@ -2,11 +2,11 @@
     <div class="container nav-top">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h1 class="text-center display-1">{{__('ui.all_announcements')}}</h1>
+                <h1 class="text-center display-1"><span class="titleCreate">{{__('ui.all_announcements')}}</span></h1>
             </div>
             @forelse ($announcements as $announcement)
             <div class="col-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center ">
-                <div class="card border img" style="width: 18rem;">
+                <div class="card  img" style="width: 18rem;">
                     <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : '/media/img/default.png'}}" class="card-img-top imgcard" alt="immagine">
                     <div class="card-body">
                         <h5 class="card-title fw-bold text-center">{{$announcement->title}}</h5>

@@ -2,13 +2,13 @@
   <div class="container ">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
-        <h1 class="display-3 text-center registlogin">
+        <h1 class="display-3 text-center ">
           {{-- messaggio con struttura di controllo --}}
           {{-- {{$announcement_to_check ? "{{__('ui.announcement_to_revise')}}" : "{{__('ui.no_announcements_to_revise')}}"}} --}}
           @if ($announcement_to_check)
-              {{__('ui.announcement_to_revise')}}
+          <span class="titleCreate">{{__('ui.announcement_to_revise')}}</span>
           @else
-            {{__('ui.no_announcements_to_revise')}}
+          <span class="titleCreate">{{__('ui.no_announcements_to_revise')}}</span>
           @endif      
         </h1>
       </div>
@@ -20,7 +20,7 @@
     
     <div class="row">
       <div class="col-12 my-4">
-        <h1 class="text-center">{{__('ui.announcement_detail')}}</h1>
+        <h1 class="text-center"><span class="titleCreate">{{__('ui.announcement_detail')}}</span></h1>
       </div>
       <div class="col-12 col-md-9 my-3">
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
@@ -28,12 +28,12 @@
           <div class="swiper-wrapper">
             @if (count($announcement_to_check->images))
             @foreach ($announcement_to_check->images as $image)
-            <div  class="swiper-slide d-flex">
-              <div class="col-8 border">
+            <div  class="swiper-slide d-flex border">
+              <div class="col-8">
                 <img class="w-100" src="{{$image->getUrl(250, 200)}}" alt="">
               </div>
-              <div class="col-4 border-left ">
-                <h4 style="color:">{{__('ui.image_revise')}}</h4>
+              <div class="col-3 text-black ms-4">
+                <h4>{{__('ui.image_revise')}}</h4>
                   <ul class="d-flex flex-column p-0">
                     <li class="d-flex">{{__('ui.adult')}}: <div class="{{$image->adult}} ms-auto my-auto"></div></li>
                     <li class="d-flex">{{__('ui.medical')}}: <div class="{{$image->medical}} ms-auto my-auto"></div></li>
@@ -69,7 +69,7 @@
       <div class="col-12 col-md-3 my-3 d-flex border">
         <div class="container-fluid d-flex flex-column justify-content-center">
           <div class="row">
-            <div class="col-6 ">
+            <div class="col-12">
               <p>{{__('ui.created_by')}}: {{$announcement_to_check->user->name}}</p>  
               <h5 class="fw-bold">{{$announcement_to_check->title}}</h5>
               <h4>{{__('ui.price')}}: {{$announcement_to_check->price}} €</h4>

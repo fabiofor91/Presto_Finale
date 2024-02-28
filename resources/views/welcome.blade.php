@@ -28,8 +28,8 @@
         <h1 class="text-center display-1 my-2">ItaliaUnita</h1>
         <p style="text-align: justify;">Esplora Presto.it, il nuovo paradiso dello shopping online! Scopri la bellezza made in Italy a prezzi accessibili. Qualità senza compromessi, stile senza eguali. Entra ora e immergiti nell'autentico gusto italiano!</p>
       </div>
-      <div class="col-12 col-md-5 ">
-        <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="col-12 col-md-5 my-auto">
+        <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -45,76 +45,66 @@
           </div>
           <div class="carousel-inner m-1">
             <div class="carousel-item active ">
-              <img src="/media/img/Saldi50%.png" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Saldi50_2.jpg" class="d-block w-100 img-carousel" alt="...">
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/clothing.jpg" class="d-block w-100 img-carousel" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Abbigliamento</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+              <img src="/media/img/abbigliamento.jpg" class="d-block w-100 img-carousel" alt="...">
+              <div class="carousel-caption d-none d-md-block text-black">
+                <h5 class="fw-semibold">{{__('ui.abbigliamento')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
               <img src="/media/img/shoes.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>scarpe</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5 class="fw-semibold">{{__('ui.scarpe')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/accessories.jpg" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Accessori.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>accessori</h5>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h5 class="fw-semibold">{{__('ui.accessori')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/elettronics.png" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/elettronica.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>elettronica</h5>
-                <p>Some representative placeholder content for the fouth slide.</p>
+                <h5 class="fw-semibold">{{__('ui.elettronica')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/motors.png" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Motori.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>motori</h5>
-                <p>Some representative placeholder content for the fifth slide.</p>
+                <h5 class="fw-semibold">{{__('ui.motori')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/arredamento.jpg" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Arredamento.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>arredamento</h5>
-                <p>Some representative placeholder content for the sixth slide.</p>
+                <h5 class="fw-semibold">{{__('ui.arredamento')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/books.jpg" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Libri.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>libri</h5>
-                <p>Some representative placeholder content for the seventh slide.</p>
+                <h5 class="fw-semibold">{{__('ui.libri')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="https://picsum.photos/30{{random_int('0', '9')}}" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Musica.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>musica</h5>
-                <p>Some representative placeholder content for the eight slide.</p>
+                <h5 class="fw-semibold">{{__('ui.musica')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
-              <img src="/media/img/film.webp" class="d-block w-100 img-carousel" alt="...">
+              <img src="/media/img/Film.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>film</h5>
-                <p>Some representative placeholder content for the nine slide.</p>
+                <h5 class="fw-semibold">{{__('ui.film')}}</h5>
               </div>
             </div>
             <div class="carousel-item ">
               <img src="/media/img/sport.jpg" class="d-block w-100 img-carousel" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>sport</h5>
-                <p>Some representative placeholder content for the tenth slide.</p>
+                <h5 class="fw-semibold">{{__('ui.sport')}}</h5>
               </div>
             </div>
           </div>
@@ -123,7 +113,7 @@
             <span class="visually-hidden">Previous</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon text-black" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
@@ -134,7 +124,7 @@
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h3 class="text-center display-3 my-5">{{__('ui.last_announcements')}}</h3>
+        <h3 class="text-center display-3 my-5"><span class="titleCreate">{{__('ui.last_announcements')}}</span></h3>
       </div>
       @foreach ($announcements as $announcement)
       

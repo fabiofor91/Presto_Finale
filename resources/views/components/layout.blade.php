@@ -18,7 +18,7 @@
 </head>
 <body>
     <x-nav/>
-    <div class=" color">
+    <div class=" color marginLayout">
 
         {{$slot}}
     </div>

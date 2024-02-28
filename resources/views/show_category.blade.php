@@ -2,7 +2,7 @@
     <div class="container-fluid categori">
         <div class="row justify-content-center">
             <div class="col-12 margin-header my-5 ">
-                <h1 class=" text-center">{{__('ui.category')}}: <span class="fw-bold">{{__("ui.$category->name")}}</span> </h1>
+                <h1 class=" text-center"><span class="titleCreate">{{__('ui.category')}}: {{__("ui.$category->name")}}</span> </h1>
             </div>
                 
             @forelse ($category->announcements as $announcement)

@@ -46,10 +46,13 @@ footer{
 }
 
 body{
-    background-color: #f7b95bc0;
+    background-color: #F78C5B;
+    /* background: linear-gradient(#F78C5B ,#60EAF7); */
 }
 .nav-custom{
     background-color: var(--colore_secondario) !important;
+    border-bottom: 2px solid black;
+    box-shadow: 1px 1px 10px black;
 }
 
 .navbar-nav .nav-link:hover {
@@ -79,10 +82,12 @@ img{
 /* modificate card con un pò di animazione, bordo nero e sfondo nero */
 .card {
     background-color: #f5f5f5; 
-    border: 1px solid rgba(0, 0, 0, 0.2); 
+    /* border: 1px solid rgba(0, 0, 0, 0.2);  */
     border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 2px 2px 10px black; 
     transition: transform 0.3s; 
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .card:hover {
@@ -114,11 +119,13 @@ img{
     background-color: var(--colore_terziario);
     margin-top: 90px;
     padding: 20px;
-    border: 2px solid var(--colore_secondario);
+    box-shadow: 2px 2px 10px black;
+    /* border: 2px solid var(--colore_secondario); */
     border-radius: 10px;
     width: 100%; 
-    max-width: 900px; 
+    min-width: 500px; 
     height: auto;
+
 }
 
 .categori{
@@ -175,7 +182,7 @@ img{
 /* pagina annunci per categoria */
 .margin-header{
     margin-top: 80px;
-    background-color: var(--colore_secondario) !important;
+    
 }
 
 /* Caroselloswiper  */
@@ -260,6 +267,25 @@ img{
 
 /* mediaquery smartphone */
 @media only screen and (max-width: 480px) {
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        width: auto;
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
+
+    .nav {
+        margin-top: 10px; 
+    }
+    
+    .lang{
+        
+    }
+
     .link{
         display: flex;
         justify-content: center;

@@ -25,8 +25,8 @@
       @endif
       <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
         <img class="img-titolo" src="/media/img/logoPresto.png" alt="">
-        <h1 class="text-center display-1 my-5">ItaliaUnita</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla beatae aperiam harum quia tempore laudantium? Voluptas reprehenderit quidem minima ipsum, consequuntur incidunt suscipit, vero alias modi quo fuga ex facilis!</p>
+        <h1 class="text-center display-1 my-2">ItaliaUnita</h1>
+        <p style="text-align: justify;">Esplora Presto.it, il nuovo paradiso dello shopping online! Scopri la bellezza made in Italy a prezzi accessibili. Qualità senza compromessi, stile senza eguali. Entra ora e immergiti nell'autentico gusto italiano!</p>
       </div>
       <div class="col-12 col-md-5 ">
         <div id="carouselExampleCaptions" class="carousel slide">
@@ -134,12 +134,12 @@
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h3 class="text-center display-3">{{__('ui.last_announcements')}}</h3>
+        <h3 class="text-center display-3 my-5">{{__('ui.last_announcements')}}</h3>
       </div>
       @foreach ($announcements as $announcement)
       
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
-        <div class="card border img" style="width: 18rem;">
+        <div class="card  img" style="width: 18rem;">
           <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(250, 200) : '/media/img/default.png'}}" class="card-img-top imgcard" alt="immagine">
           <div class="card-body">
             <h5 class="card-title fw-bold">{{$announcement->title}}</h5>

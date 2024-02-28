@@ -61,4 +61,5 @@ return [
     'spoof' => 'Sátira',
     'violence' => 'Violencia',
     'racy' => 'Contenido Atrevido',
+    'presto' => "Consulta Presto.it, la nueva increìble pagìna web por le shopping online! Descubre exelentes productos Made in Italy a precios asequibles. Impresionante qualidad, estilo ùnico. Visita ahora y navegue en el auténtico gusto italiano!",
 ];

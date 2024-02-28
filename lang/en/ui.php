@@ -60,5 +60,5 @@ return [
     'spoof' => 'Spoof',
     'violence' => 'Violence',
     'racy' => 'Racy',
-
+    'presto' => "Visit Presto.it, the new incredible platform for online shopping! Discover great Made in Italy products with good deals. Astonishing quality, unique styles. Take a look now and surf in the authentic Italian taste!",
 ];

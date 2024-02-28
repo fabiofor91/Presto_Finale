@@ -61,4 +61,5 @@ return [
     'spoof' => 'Satira',
     'violence' => 'Violenza',
     'racy' => 'Contenuto audace',
+    'presto' => "Esplora Presto.it, il nuovo paradiso dello shopping online! Scopri la bellezza made in Italy a prezzi accessibili. Qualità senza compromessi, stile senza eguali. Entra ora e immergiti nell'autentico gusto italiano!",
 ];

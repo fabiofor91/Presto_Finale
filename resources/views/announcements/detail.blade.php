@@ -3,9 +3,9 @@
         
         <div class="row">
             <div class="col-12 my-4">
-                <h1 class="text-center">{{__('ui.announcement_detail')}}</h1>
+                <h1 class="text-center"><span class="titleCreate">{{__('ui.announcement_detail')}}</span></h1>
             </div>
-            <div class="col-12 col-md-6 my-3">
+            <div class="col-12 col-md-7 my-3 border bg-custom">
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
                     <div class="parallax-bg" data-swiper-parallax="-23%"></div>
                     <div class="swiper-wrapper">
@@ -26,26 +26,26 @@
                     <div class="swiper-pagination"></div>
                 </div>
              </div>   
-            <div class="col-12 col-md-6 my-3 border d-flex flex-column justify-content-center">
-                @if ($announcement->user)
-                <p>{{__('ui.created_by')}}: {{$announcement->user->name}}</p>  
-                @else
-                <p>{{__('ui.anonymus_creator')}}</p>
-                @endif
+            <div class="col-12 col-md-4 mx-auto my-3 border d-flex flex-column  bg-custom">
+              <div class="ms-3 mt-5">
+                
+                  
+                
                 <h4 class="fw-bold">{{$announcement->title}}</h4>
                 <h5>{{__('ui.price')}}: {{$announcement->price}} €</h4>
-                    <p>{{$announcement->description}}</p>
+                    <p>{{__('ui.description')}}: {{$announcement->description}}</p>
+                    <p>{{__('ui.created_by')}}: {{$announcement->user->name}}</p>
                     <p>{{__('ui.created_at')}} {{$announcement->created_at->format('d/m/y')}}</p>
                     <div>
                         <a class="btn bottone my-1" href="{{route('indexAnnouncements')}}">{{__('ui.all_announcements')}}</a>
-                        <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.category')}} {{__('ui.' . $announcement->category->name)}}</a>
+                        <a class="btn bottone" href="{{route('showCategory', $announcement->category)}}">{{__('ui.' . $announcement->category->name)}}</a>
                     </div>
+              </div>
                     
-                </div>
             </div>
         </div>
     </div>  
-</div>  
+  
 </x-layout>
 
 {{-- <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">

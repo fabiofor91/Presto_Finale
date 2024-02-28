@@ -26,7 +26,7 @@
       <div class="col-12 col-md-5 d-flex align-items-center justify-content-center flex-column">
         <img class="img-titolo" src="/media/img/logoPresto.png" alt="">
         <h1 class="text-center display-1 my-2">ItaliaUnita</h1>
-        <p style="text-align: justify;">Esplora Presto.it, il nuovo paradiso dello shopping online! Scopri la bellezza made in Italy a prezzi accessibili. Qualità senza compromessi, stile senza eguali. Entra ora e immergiti nell'autentico gusto italiano!</p>
+        <p style="text-align: justify;">{{__('ui.presto')}}</p>
       </div>
       <div class="col-12 col-md-5 my-auto">
         <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">

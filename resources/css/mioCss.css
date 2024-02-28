@@ -3,6 +3,7 @@
     --colore_secondario: #F1E210 ;  
     --colore_terziario: #ffffff; 
     --colore-mio: #F78C5B;
+    --colore_blur: #F3C384;
 }
 
 /* #ffed00 */
@@ -23,6 +24,11 @@ footer{
     background-color: var(--colore_secondario);
     height: 40vh;   
 }
+
+.bg-custom{
+    background-color: var(--colore_blur);
+}
+
 .link{
     display: flex;
     justify-content: end;
@@ -43,6 +49,11 @@ footer{
 }
 .testo-sottolineato:hover {
     text-decoration: underline;
+}
+
+.a-custom{
+    text-decoration: none;
+    color: var(--colore_primario);
 }
 
 body{
@@ -177,6 +188,10 @@ img{
     transition: background-color 0.3s ease;
 }
 
+.carousel-caption{
+    bottom: 0.6rem;
+}
+
 /* counter per revisore  */
 .counter{
     height: 30px;
@@ -211,7 +226,7 @@ img{
 }
 
 .aquamarine_light{
-    background-color: aquamarine;
+    background-color: greenyellow;
     height: 15px;
     width: 15px;
     border-radius: 50%;

@@ -44,14 +44,14 @@
             @enderror
           </div>
           @if (!empty($images))
-              <div class="row">
+              <div class="row my-3">
                 <div class="col-12">
                     <p>Anteprima foto</p>
                     <div class="row border border-4 rounded py-4 d-flex">
                         @foreach ($images as $key => $image)
                             <div class="col my-3">
                                 <div class="mx-auto shadow rounded d-flex justify-content-center">
-                                    <img src="{{$image->temporaryUrl()}}" class="img-preview d-flex border border-black " alt="">
+                                    <img src="{{$image->temporaryUrl()}}" class="img-preview d-flex" alt="">
                                 </div>
                                     <div class="button btn btn-danger shadow d-block text-center my-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</div>
                                
@@ -61,6 +61,6 @@
                 </div>
               </div>
           @endif
-        <button type="submit" class="btn btn-primary">Crea Annuncio</button>
+        <button type="submit" class="btn btn-primary" class="my-3">Crea Annuncio</button>
       </form>
 </div>

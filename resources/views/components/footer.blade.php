@@ -2,7 +2,7 @@
 <footer class="container-fluid">
   <div class="row flex-wrap justify-content-between align-items-center p-0 m-0 ">
     <div class="col-12 col-md-4 my-3">
-      <p>&copy; 2024 Aulab: Fabio Forgiarini . Francesco Giusto . Michele Di Martino . Armando Campanella </p>
+      <p>&copy; 2024 <a class="testo-sottolineato a-custom" href="https://aulab.it/" target="_blank" >Aulab</a>: <a class="testo-sottolineato a-custom" href="https://www.linkedin.com/in/fabio-forgiariniweb/" target="_blank">Fabio Forgiarini</a> , <a class="testo-sottolineato a-custom" href="https://www.linkedin.com/in/francesco-giustowebdeveloper/" target="_blank">Francesco Giusto</a> , <a class="testo-sottolineato a-custom" href="" target="_blank">Michele Di Martino</a> , <a  class="testo-sottolineato a-custom" href="https://www.linkedin.com/in/armando-campanella/" target="_blank">Armando Campanella</a> </p>
     </div>
     <div class="col-12 col-md-4 text-center">
       <a href="/" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -13,7 +13,6 @@
       <ul class="p-0 link">
         <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link px-2  testo-sottolineato">Home</a></li>
         <li class="nav-item"><a href="{{route('indexAnnouncements')}}" class="nav-link px-2 text-muted testo-sottolineato">{{__('ui.announcements')}}</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted testo-sottolineato">In lavorazione</a></li>
         <li class="nav-item"><a href="{{route('form_revisor')}}" class="nav-link px-2 text-muted testo-sottolineato">{{__('ui.work_with_us')}}</a></li>
       </ul>
     </div>

@@ -29,10 +29,10 @@
             @if (count($announcement_to_check->images))
             @foreach ($announcement_to_check->images as $image)
             <div  class="swiper-slide d-flex border">
-              <div class="col-8">
+              <div class="col-12 col-md-8">
                 <img class="w-100" src="{{$image->getUrl(250, 200)}}" alt="">
               </div>
-              <div class="col-3 text-black ms-4">
+              <div class="col-12 col-md-3 text-black ms-4">
                 <h4>{{__('ui.image_revise')}}</h4>
                   <ul class="d-flex flex-column p-0">
                     <li class="d-flex">{{__('ui.adult')}}: <div class="{{$image->adult}} ms-auto my-auto"></div></li>
@@ -63,8 +63,28 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
         </div>
-      </div>   
+      </div> 
       
+      @if (count($announcement_to_check->images))
+      <div class="col-12 d-block d-md-none text-black">
+        <h4>{{__('ui.image_revise')}}</h4>
+          <ul class="d-flex flex-column p-0">
+            <li class="d-flex">{{__('ui.adult')}}: <div class="{{$image->adult}} ms-auto my-auto"></div></li>
+            <li class="d-flex">{{__('ui.medical')}}: <div class="{{$image->medical}} ms-auto my-auto"></div></li>
+            <li class="d-flex">{{__('ui.spoof')}}: <div class="{{$image->spoof}} ms-auto my-auto"></div></li>
+            <li class="d-flex">{{__('ui.violence')}}: <div class="{{$image->violence}} ms-auto my-auto"></div></li>
+            <li class="d-flex">{{__('ui.racy')}}: <div class="{{$image->racy}} ms-auto my-auto"></div></li>
+          </ul>
+        <h4 class="my-2">Tags</h4>
+        @if ($image->labels)
+            
+        @foreach ($image->labels as $label)
+            <span class="my-2">{{$label}},</span>
+        @endforeach
+        @endif
+      </div>
+      @endif
+
       {{-- c --}}
       <div class="col-12 col-md-3 my-3 d-flex border">
         <div class="container-fluid d-flex flex-column justify-content-center">

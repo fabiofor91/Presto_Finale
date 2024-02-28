@@ -10,7 +10,7 @@
       <div class="navbar-nav d-flex">
         {{-- Dropdown categorie  --}}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" aria-current="true" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active" aria-current="true" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('ui.categories')}}
           </a>
           <ul class="dropdown-menu ">
@@ -20,12 +20,12 @@
             @endforeach
           </ul>
         </li>
-        <a class="nav-link mx-2" aria-current="true" href="{{route('indexAnnouncements')}}">{{__('ui.announcements')}}</a>
+        <a class="nav-link mx-2 active" aria-current="true" href="{{route('indexAnnouncements')}}">{{__('ui.announcements')}}</a>
         @guest
-        <a class="nav-link mx-2" aria-current="true" href="{{route('register')}}">{{__('ui.register')}}</a>
-        <a class="nav-link mx-2" aria-current="true" href="{{route('login')}}">{{__('ui.login')}}</a>
+        <a class="nav-link mx-2 active" aria-current="true" href="{{route('register')}}">{{__('ui.register')}}</a>
+        <a class="nav-link mx-2 active" aria-current="true" href="{{route('login')}}">{{__('ui.login')}}</a>
         @else
-        <a class="nav-link mx-2" aria-current="true" href="{{route('create_announcement')}}">{{__('ui.insert_announcement')}}</a>
+        <a class="nav-link mx-2 active" aria-current="true" href="{{route('create_announcement')}}">{{__('ui.insert_announcement')}}</a>
         @endguest
         
       </div>
